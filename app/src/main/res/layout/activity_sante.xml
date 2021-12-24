@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroung_sante"
+    tools:context=".Sante">
+
+    <ImageView
+        android:id="@+id/btnTemperature"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="128dp"
+        android:layout_marginEnd="55dp"
+        android:layout_marginBottom="23dp"
+        android:src="@drawable/btn_temperature"
+        app:layout_constraintBottom_toTopOf="@+id/btnMedicaments"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </ImageView>
+
+    <ImageView
+        android:id="@+id/btnVaccin"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="55dp"
+        android:layout_marginEnd="55dp"
+        android:layout_marginBottom="96dp"
+        android:src="@drawable/btn_vaccin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnHopitaux">
+
+    </ImageView>
+
+    <ImageView
+        android:id="@+id/btnMedicaments"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="55dp"
+        android:layout_marginEnd="55dp"
+        android:layout_marginBottom="21dp"
+        android:src="@drawable/btn_medicaments"
+        app:layout_constraintBottom_toTopOf="@+id/btnMedecin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnTemperature">
+
+    </ImageView>
+
+    <ImageView
+        android:id="@+id/btnMedecin"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="55dp"
+        android:layout_marginEnd="55dp"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/btn_medecin"
+        app:layout_constraintBottom_toTopOf="@+id/btnHopitaux"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnMedicaments">
+
+    </ImageView>
+
+    <ImageView
+        android:id="@+id/btnHopitaux"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="55dp"
+        android:layout_marginEnd="55dp"
+        android:layout_marginBottom="21dp"
+        android:src="@drawable/btn_hopitaux"
+        app:layout_constraintBottom_toTopOf="@+id/btnVaccin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnMedecin">
+
+    </ImageView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

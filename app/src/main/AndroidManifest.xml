@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.magicmamanapplication">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/icon_app"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MagicMamanApplication"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".DetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Hopitaux"
+            android:exported="false" />
+        <activity
+            android:name=".Medecin"
+            android:exported="false" />
+        <activity
+            android:name=".Medicaments"
+            android:exported="false" />
+        <activity
+            android:name=".Vaccin"
+            android:exported="false" />
+        <activity
+            android:name=".Temperature"
+            android:exported="false" />
+        <activity
+            android:name=".Poids"
+            android:exported="false" />
+        <activity
+            android:name=".Taille"
+            android:exported="false" />
+        <activity
+            android:name=".Sons"
+            android:exported="false" />
+        <activity
+            android:name=".Reveil"
+            android:exported="false" />
+        <activity
+            android:name=".Sommeill"
+            android:exported="false" />
+        <activity
+            android:name=".Bibrons"
+            android:exported="false" />
+        <activity
+            android:name=".RepasSolide"
+            android:exported="false" />
+        <activity
+            android:name=".Tete"
+            android:exported="false" />
+        <activity
+            android:name=".Guides"
+            android:exported="false"
+            android:hardwareAccelerated="false" />
+        <activity
+            android:name=".Nourriture"
+            android:exported="false"
+            android:hardwareAccelerated="false" />
+        <activity
+            android:name=".Croissance"
+            android:exported="false"
+            android:hardwareAccelerated="false" />
+        <activity
+            android:name=".Sommeil"
+            android:exported="false"
+            android:hardwareAccelerated="false" />
+        <activity
+            android:name=".Sante"
+            android:exported="false"
+            android:hardwareAccelerated="false" />
+        <activity
+            android:name=".Menu"
+            android:exported="false" />
+        <activity
+            android:name=".Identify"
+            android:exported="true" />
+        <activity
+            android:name=".Register"
+            android:exported="true" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="SplashScreen"
+            android:theme="@style/Theme.MagicMamanApplication" />
+        <activity
+            android:name=".SplashScreen"
+            android:exported="true"
+            android:label="SplashScreen"
+            android:theme="@style/Theme.Transparent">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service android:name=".TimerService" />
+    </application>
+
+</manifest>

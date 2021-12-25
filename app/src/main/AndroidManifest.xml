@@ -13,6 +13,9 @@
         android:theme="@style/Theme.MagicMamanApplication"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".TestGitActivity"
+            android:exported="false" />
+        <activity
             android:name=".DetailActivity"
             android:exported="false" />
         <activity

@@ -13,6 +13,9 @@
         android:theme="@style/Theme.MagicMamanApplication"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".Chaima"
+            android:exported="false" />
+        <activity
             android:name=".WalidTestGit"
             android:exported="false" />
         <activity

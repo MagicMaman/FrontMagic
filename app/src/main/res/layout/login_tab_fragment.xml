@@ -113,7 +113,7 @@
         app:layout_constraintVertical_bias="0.211" />
 
     <CheckBox
-        android:id="@+id/checkBox"
+        android:id="@+id/checkBoxRememberMe"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/tw_cen_bold"

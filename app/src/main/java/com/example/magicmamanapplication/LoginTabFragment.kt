@@ -31,7 +31,9 @@ class LoginTabFragment : Fragment() {
         bind.imageView.setOnClickListener {
           /*  val intent= Intent(this@LoginTabFragment.requireContext(), Identify::class.java)
             startActivity(intent)*/
+
                 doLogin()
+
 
         }
         return bind.root

@@ -19,8 +19,8 @@
 
     <TextView
         android:id="@+id/textViewTete"
-        android:layout_width="305dp"
-        android:layout_height="256dp"
+        android:layout_width="399dp"
+        android:layout_height="369dp"
         android:layout_marginTop="136dp"
         android:gravity="center"
         android:textSize="50dp"
@@ -30,24 +30,15 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/btn_delete_tete"
+        android:id="@+id/btn_confirm_tete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="76dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btn_update_tete"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewTete"
-        app:srcCompat="@drawable/btn_delete" />
-
-    <ImageView
-        android:id="@+id/btn_confirm_tete"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="64dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/btn_confirm" />
 
     <ImageView
@@ -55,9 +46,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="79dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btn_delete_tete"
+        app:layout_constraintStart_toEndOf="@+id/btn_confirm_tete"
         app:layout_constraintTop_toBottomOf="@+id/textViewTete"
         app:srcCompat="@drawable/btn_update" />
 

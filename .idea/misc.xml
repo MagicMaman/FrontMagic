@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MagicMamanApplication/MagicMamanApplication/app/src/main/res/drawable/bg_round.xml" value="0.1703125" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MagicMamanApplication/MagicMamanApplication/app/src/main/res/drawable/menu_bg.xml" value="0.2046875" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MagicMamanApplication/MagicMamanApplication/app/src/main/res/layout/activity_detail.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MagicMamanApplication/MagicMamanApplication/app/src/main/res/layout/activity_guides.xml" value="0.20416666666666666" />
@@ -10,12 +11,20 @@
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MagicMamanApplication/MagicMamanApplication/app/src/main/res/layout/activity_main.xml" value="0.18854166666666666" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MagicMamanApplication/MagicMamanApplication/app/src/main/res/layout/activity_menu.xml" value="0.25" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MagicMamanApplication/MagicMamanApplication/app/src/main/res/layout/activity_sons.xml" value="0.22" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MagicMamanApplication/MagicMamanApplication/app/src/main/res/layout/activity_test_git.xml" value="0.17753623188405798" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MagicMamanApplication/MagicMamanApplication/app/src/main/res/layout/etat.xml" value="0.18854166666666666" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MagicMamanApplication/MagicMamanApplication/app/src/main/res/layout/fragment_btn_sheet_tete.xml" value="0.17300724637681159" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MagicMamanApplication/MagicMamanApplication/app/src/main/res/layout/fragment_favorite.xml" value="0.25" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MagicMamanApplication/MagicMamanApplication/app/src/main/res/layout/fragment_home.xml" value="0.18854166666666666" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MagicMamanApplication/MagicMamanApplication/app/src/main/res/layout/fragment_resume.xml" value="0.18854166666666666" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MagicMamanApplication/MagicMamanApplication/app/src/main/res/layout/fragment_resume.xml" value="0.22" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MagicMamanApplication/MagicMamanApplication/app/src/main/res/layout/fragment_settings.xml" value="0.18854166666666666" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MagicMamanApplication/MagicMamanApplication/app/src/main/res/layout/item.xml" value="0.10416666666666667" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MagicMamanApplication/MagicMamanApplication/app/src/main/res/layout/item_image.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MagicMamanApplication/MagicMamanApplication/app/src/main/res/layout/item_list.xml" value="0.22" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MagicMamanApplication/MagicMamanApplication/app/src/main/res/layout/layout_child.xml" value="0.1" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MagicMamanApplication/MagicMamanApplication/app/src/main/res/layout/layout_group.xml" value="0.1" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MagicMamanApplication/MagicMamanApplication/app/src/main/res/layout/login_tab_fragment.xml" value="0.17300724637681159" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MagicMamanApplication/MagicMamanApplication/app/src/main/res/layout/sub_item_list.xml" value="0.15416666666666667" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MagicMamanApplication/MagicMamanApplication/app/src/main/res/menu/bottom_menu.xml" value="0.18854166666666666" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MagicMamanApplication/app/src/main/res/drawable-hdpi/ic_pause_black_24dp.xml" value="0.14895833333333333" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MagicMamanApplication/app/src/main/res/drawable-hdpi/ic_shuffle_black_24dp.xml" value="0.16770833333333332" />
@@ -78,11 +87,6 @@
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MagicMamanApplication/app/src/main/res/layout/song_ticket.xml" value="0.21" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MagicMamanApplication/app/src/main/res/menu/bottom_menu.xml" value="0.184375" />
         <entry key="..\:/Users/ASUS/AppData/Local/Android/Sdk/platforms/android-31/data/res/layout/simple_spinner_item.xml" value="0.18931159420289856" />
-        <entry key="..\:/Users/DELL/Desktop/miniprojet/FrontMagicMaman/app/src/main/res/layout/activity_detail.xml" value="0.13020833333333334" />
-        <entry key="..\:/Users/DELL/Desktop/miniprojet/FrontMagicMaman/app/src/main/res/layout/activity_main.xml" value="0.13020833333333334" />
-        <entry key="..\:/Users/DELL/Desktop/miniprojet/FrontMagicMaman/app/src/main/res/layout/activity_register.xml" value="0.13020833333333334" />
-        <entry key="..\:/Users/DELL/Desktop/miniprojet/FrontMagicMaman/app/src/main/res/layout/login_tab_fragment.xml" value="0.264" />
-        <entry key="..\:/Users/DELL/Desktop/miniprojet/FrontMagicMaman/app/src/main/res/layout/signup_tab_fragment.xml" value="0.13020833333333334" />
         <entry key="..\:/Users/chaima/AndroidStudioProjects/MagicMamanApplication/app/src/main/res/drawable/edt_txt_dg.xml" value="0.18333333333333332" />
         <entry key="..\:/Users/chaima/AndroidStudioProjects/MagicMamanApplication/app/src/main/res/drawable/null_radio_button.xml" value="0.12129629629629629" />
         <entry key="..\:/Users/chaima/AndroidStudioProjects/MagicMamanApplication/app/src/main/res/drawable/radio_not_selected.xml" value="0.12129629629629629" />

@@ -10,6 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="75dp"
         android:text="Item TextView"
+        android:textStyle="bold"
         android:gravity="center"
         android:textSize="35sp"
         android:background="@drawable/bg_round"/>

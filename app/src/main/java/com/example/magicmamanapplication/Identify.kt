@@ -23,12 +23,15 @@ class Identify : AppCompatActivity() {
     lateinit var radBtnF: RadioButton
     lateinit var gender: String
 
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_identify)
         radBtnG=findViewById(R.id.radBtnG)
         radBtnF=findViewById(R.id.radBtnF)
         btnSuivant=findViewById(R.id.btnSuivant)
+
 
         if(radBtnF.isChecked){
             gender  = "fille"
@@ -43,6 +46,7 @@ class Identify : AppCompatActivity() {
            startActivity(i)*/
             doStore(gender)
         }
+
         val lienNames = arrayOf("Mère","Père","Partenaire","Grand-parent","Oncle ou Tante","Ami(e)")
         val arrayAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, lienNames )
         // attached arrayadapter to spinner

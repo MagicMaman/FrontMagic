@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.magicmamanapplication">
-
-    <!--Adding Read External Storage Permission-->
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <!-- Adding Read External Storage Permission -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -14,7 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MagicMamanApplication"
         android:usesCleartextTraffic="true">
-
+        <activity
+            android:name=".activities.Hopitaux"
+            android:exported="false" />
         <activity
             android:name=".activities.DetailActivity"
             android:exported="false" />

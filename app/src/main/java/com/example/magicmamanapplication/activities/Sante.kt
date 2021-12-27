@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 import com.example.magicmamanapplication.R
+import com.example.magicmamanapplication.activities.*
 
 class Sante : AppCompatActivity() {
     lateinit var btnTemperature: ImageView

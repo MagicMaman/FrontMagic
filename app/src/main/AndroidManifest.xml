@@ -19,9 +19,6 @@
             android:name=".activities.DetailActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.Hopitaux"
-            android:exported="false" />
-        <activity
             android:name=".activities.Medecin"
             android:exported="false" />
         <activity

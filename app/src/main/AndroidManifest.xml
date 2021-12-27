@@ -4,6 +4,8 @@
     <!-- Adding Read External Storage Permission -->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -13,6 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MagicMamanApplication"
         android:usesCleartextTraffic="true">
+        <activity
+            android:name=".activities.Hospital"
+            android:exported="false" />
         <activity
             android:name=".activities.Hopitaux"
             android:exported="false" />
@@ -102,6 +107,10 @@
         </activity>
 
         <service android:name=".activities.TimerService" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyC4qKkSuxmCE53x54pE5DccrvQfBWAtBaY" />
     </application>
 
 </manifest>

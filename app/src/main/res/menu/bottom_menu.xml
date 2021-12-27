@@ -3,20 +3,20 @@
     <item android:id="@+id/home"
           android:title="Home"
           android:icon="@drawable/ic_action_home"
-        />
+          android:fontFamily="@font/tw_cen_bold"/>
 
     <item android:id="@+id/resume"
         android:title="Resume"
         android:icon="@drawable/ic_action_forum"
-        />
+        android:fontFamily="@font/tw_cen_bold"/>
 
     <item android:id="@+id/favorite"
         android:title="Favorite"
         android:icon="@drawable/ic_action_fav"
-        />
+        android:fontFamily="@font/tw_cen_bold"/>
 
     <item android:id="@+id/settings"
         android:title="Settings"
         android:icon="@drawable/ic_action_setting"
-        />
+        android:fontFamily="@font/tw_cen_bold"/>
 </menu>

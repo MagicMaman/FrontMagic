@@ -22,6 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="TextView"
+        android:fontFamily="@font/tw_cen_bold"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -30,8 +31,8 @@
 
     <ScrollView
         android:id="@+id/scrollView3"
-        android:layout_width="409dp"
-        android:layout_height="401dp"
+        android:layout_width="match_parent"
+        android:layout_height="494dp"
         android:layout_marginTop="17dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -45,6 +46,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="TextView"
+            android:fontFamily="@font/tw_cen_regular"
             app:layout_constraintHorizontal_bias="0.11"
             app:layout_constraintTop_toBottomOf="@+id/_imageTitle" />
     </ScrollView>

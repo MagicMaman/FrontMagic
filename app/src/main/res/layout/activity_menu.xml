@@ -11,8 +11,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
-        android:layout_width="411dp"
-        android:layout_height="665dp"
+        android:layout_width="match_parent"
+        android:layout_height="750dp"
         android:background="@drawable/menu_bg"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,9 +23,8 @@
 
         <FrameLayout
             android:id="@+id/frameLayout"
-            android:layout_width="409dp"
-            android:layout_height="568dp"
-            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="650dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.47"
             app:layout_constraintStart_toStartOf="parent"

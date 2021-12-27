@@ -5,16 +5,11 @@ import android.content.Intent
 import android.content.IntentFilter
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
-import androidx.fragment.app.Fragment
 import com.example.magicmamanapplication.databinding.ActivityTeteBinding
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import kotlin.math.roundToInt
-const val  edtnotesTete : String = ""
-const val  timeTVTete : String = ""
 
 class Tete : AppCompatActivity()
 {
@@ -22,7 +17,8 @@ class Tete : AppCompatActivity()
     private var timerStarted = false
     private lateinit var serviceIntent: Intent
     private var time = 0.0
-    lateinit var textViewTete : TextView
+    lateinit var saveTimeTv : TextView
+    lateinit var saveNotesTete : TextView
     override fun onCreate(savedInstanceState: Bundle?)
     {
         super.onCreate(savedInstanceState)
@@ -42,8 +38,11 @@ class Tete : AppCompatActivity()
 
             val time=binding.timeTV.text.toString()
             val note=binding.edtNotes.text.toString()
-            textViewTete=view.findViewById(R.id.textViewTete)
-            textViewTete.text="$time"+"$note"
+            saveTimeTv=view.findViewById(R.id.saveTimeTv)
+            saveTimeTv.text="$time"
+
+            saveNotesTete=view.findViewById(R.id.saveNotesTete)
+            saveNotesTete.text="$note"
         }
         binding.startStopButton.setOnClickListener { startStopTimer() }
         binding.resetButton.setOnClickListener { resetTimer() }

@@ -11,4 +11,5 @@
     <color name="green2">#CC072B0B</color>
     <color name="transparent">#AEEFFFF1</color>
     <color name="gray">#d4d3d3</color>
+    <color name="sub_item_tv">#9CC4C4C4</color>
 </resources>

@@ -1,20 +1,15 @@
 package com.example.magicmamanapplication.fragments
 
-import android.content.pm.PackageManager
-import android.os.Build
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.magicmamanapplication.DataModel
 import com.example.magicmamanapplication.R
 import com.example.magicmamanapplication.adapters.PhotoAdapter
-import kotlinx.android.synthetic.main.photo_layout.*
-import java.util.jar.Manifest
 
 class FavoriteFragment : Fragment() {
     private lateinit var recyclerView: RecyclerView
@@ -62,6 +57,7 @@ class FavoriteFragment : Fragment() {
         dataList.add(DataModel("J'ai trouvé mes pieds", R.drawable.icon_add))
         dataList.add(DataModel("Je me tiens debout", R.drawable.icon_add))
         dataList.add(DataModel("Coucou", R.drawable.icon_add))
+
         photoAdapter.setDataList(dataList)
 
         return view

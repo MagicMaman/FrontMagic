@@ -14,83 +14,83 @@
         android:usesCleartextTraffic="true">
 
         <activity
-            android:name=".DetailActivity"
+            android:name=".activities.DetailActivity"
             android:exported="false" />
         <activity
-            android:name=".Hopitaux"
+            android:name=".activities.Hopitaux"
             android:exported="false" />
         <activity
-            android:name=".Medecin"
+            android:name=".activities.Medecin"
             android:exported="false" />
         <activity
-            android:name=".Medicaments"
+            android:name=".activities.Medicaments"
             android:exported="false" />
         <activity
-            android:name=".Vaccin"
+            android:name=".activities.Vaccin"
             android:exported="false" />
         <activity
-            android:name=".Temperature"
+            android:name=".activities.Temperature"
             android:exported="false" />
         <activity
-            android:name=".Poids"
+            android:name=".activities.Poids"
             android:exported="false" />
         <activity
-            android:name=".Taille"
+            android:name=".activities.Taille"
             android:exported="false" />
         <activity
-            android:name=".Sons"
+            android:name=".activities.Sons"
             android:exported="false" />
         <activity
-            android:name=".Reveil"
+            android:name=".activities.Reveil"
             android:exported="false" />
         <activity
-            android:name=".Sommeill"
+            android:name=".activities.Sommeill"
             android:exported="false" />
         <activity
-            android:name=".Bibrons"
+            android:name=".activities.Bibrons"
             android:exported="false" />
         <activity
-            android:name=".RepasSolide"
+            android:name=".activities.RepasSolide"
             android:exported="false" />
         <activity
-            android:name=".Tete"
+            android:name=".activities.Tete"
             android:exported="false" />
         <activity
-            android:name=".Guides"
+            android:name=".activities.Guides"
             android:exported="false"
             android:hardwareAccelerated="false" />
         <activity
-            android:name=".Nourriture"
+            android:name=".activities.Nourriture"
             android:exported="false"
             android:hardwareAccelerated="false" />
         <activity
-            android:name=".Croissance"
+            android:name=".activities.Croissance"
             android:exported="false"
             android:hardwareAccelerated="false" />
         <activity
-            android:name=".Sommeil"
+            android:name=".activities.Sommeil"
             android:exported="false"
             android:hardwareAccelerated="false" />
         <activity
-            android:name=".Sante"
+            android:name=".activities.Sante"
             android:exported="false"
             android:hardwareAccelerated="false" />
         <activity
-            android:name=".Menu"
+            android:name=".activities.Menu"
             android:exported="false" />
         <activity
-            android:name=".Identify"
+            android:name=".activities.Identify"
             android:exported="true" />
         <activity
-            android:name=".Register"
+            android:name=".activities.Register"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
+            android:name=".activities.MainActivity"
             android:exported="true"
             android:label="SplashScreen"
             android:theme="@style/Theme.MagicMamanApplication" />
         <activity
-            android:name=".SplashScreen"
+            android:name=".activities.SplashScreen"
             android:exported="true"
             android:label="SplashScreen"
             android:theme="@style/Theme.Transparent">
@@ -101,7 +101,7 @@
             </intent-filter>
         </activity>
 
-        <service android:name=".TimerService" />
+        <service android:name=".activities.TimerService" />
     </application>
 
 </manifest>

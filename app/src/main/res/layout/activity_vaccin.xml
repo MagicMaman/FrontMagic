@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Vaccin"
+    tools:context=".activities.Vaccin"
     android:background="@drawable/background_vaccin">
 
 </androidx.constraintlayout.widget.ConstraintLayout>

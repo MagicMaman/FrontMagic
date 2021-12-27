@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Taille"
+    tools:context=".activities.Taille"
     android:background="@drawable/background_taille">
     <EditText
         android:id="@+id/etTimeTaille"

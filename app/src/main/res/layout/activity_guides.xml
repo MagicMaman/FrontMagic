@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Guides">
+    tools:context=".activities.Guides">
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/_imageRecyclerView"
         android:layout_width="match_parent"

@@ -43,9 +43,9 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:background="@drawable/edt_txt_dg"
         android:hint="Enter password"
         android:inputType="textPassword"
-        android:background="@drawable/edt_txt_dg"
         android:paddingLeft="20dp"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
@@ -54,8 +54,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edtTxtEmail"
         app:layout_constraintVertical_bias="0"
-        app:layout_constraintWidth_percent=".8"
-         />
+        app:layout_constraintWidth_percent=".8" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -102,15 +101,16 @@
         android:id="@+id/checkBoxRememberMe"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="96dp"
+        android:layout_marginTop="25dp"
         android:fontFamily="@font/tw_cen_bold"
         android:text="Remember me"
+        android:buttonTint="@color/green2"
         app:layout_constraintBottom_toTopOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.855"
+        app:layout_constraintEnd_toEndOf="@+id/edtTxtPassword"
+        app:layout_constraintHorizontal_bias="0.906"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edtTxtPassword"
-        app:layout_constraintVertical_bias="0.351" />
+        app:layout_constraintVertical_bias="0.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

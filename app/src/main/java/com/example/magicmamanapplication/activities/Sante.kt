@@ -10,10 +10,6 @@ import android.os.Bundle
 import android.widget.ImageView
 import android.widget.Toast
 import com.example.magicmamanapplication.R
-import com.example.magicmamanapplication.activities.Medecin
-import com.example.magicmamanapplication.activities.Medicaments
-import com.example.magicmamanapplication.activities.Temperature
-import com.example.magicmamanapplication.activities.Vaccin
 
 private const val PERMISSION_REQUEST = 10
 

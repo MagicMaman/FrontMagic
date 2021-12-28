@@ -9,18 +9,47 @@
 
     <ImageView
         android:id="@+id/btnTemperature"
-        android:layout_width="0dp"
+        android:layout_width="283dp"
         android:layout_height="0dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="55dp"
-        android:layout_marginTop="128dp"
-        android:layout_marginEnd="55dp"
+        android:layout_marginTop="168dp"
         android:layout_marginBottom="23dp"
         android:src="@drawable/btn_temperature"
         app:layout_constraintBottom_toTopOf="@+id/btnMedicaments"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btnMedicaments"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/btnMedicaments"
         app:layout_constraintTop_toTopOf="parent">
+
+    </ImageView>
+
+    <ImageView
+        android:id="@+id/btnMedicaments"
+        android:layout_width="283dp"
+        android:layout_height="0dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="23dp"
+        android:src="@drawable/btn_medicaments"
+        app:layout_constraintBottom_toTopOf="@+id/btnHopitaux"
+        app:layout_constraintEnd_toEndOf="@+id/btnHopitaux"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/btnHopitaux"
+        app:layout_constraintTop_toBottomOf="@+id/btnTemperature">
+
+    </ImageView>
+
+    <ImageView
+        android:id="@+id/btnHopitaux"
+        android:layout_width="283dp"
+        android:layout_height="0dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="27dp"
+        android:src="@drawable/btn_hopitaux"
+        app:layout_constraintBottom_toTopOf="@+id/btnVaccin"
+        app:layout_constraintEnd_toEndOf="@+id/btnVaccin"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/btnVaccin"
+        app:layout_constraintTop_toBottomOf="@+id/btnMedicaments">
 
     </ImageView>
 
@@ -31,60 +60,12 @@
         android:layout_centerHorizontal="true"
         android:layout_marginStart="55dp"
         android:layout_marginEnd="55dp"
-        android:layout_marginBottom="96dp"
+        android:layout_marginBottom="159dp"
         android:src="@drawable/btn_vaccin"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnHopitaux">
-
-    </ImageView>
-
-    <ImageView
-        android:id="@+id/btnMedicaments"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="55dp"
-        android:layout_marginEnd="55dp"
-        android:layout_marginBottom="21dp"
-        android:src="@drawable/btn_medicaments"
-        app:layout_constraintBottom_toTopOf="@+id/btnMedecin"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnTemperature">
-
-    </ImageView>
-
-    <ImageView
-        android:id="@+id/btnMedecin"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="55dp"
-        android:layout_marginEnd="55dp"
-        android:layout_marginBottom="20dp"
-        android:src="@drawable/btn_medecin"
-        app:layout_constraintBottom_toTopOf="@+id/btnHopitaux"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnMedicaments">
-
-    </ImageView>
-
-    <ImageView
-        android:id="@+id/btnHopitaux"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="55dp"
-        android:layout_marginEnd="55dp"
-        android:layout_marginBottom="21dp"
-        android:src="@drawable/btn_hopitaux"
-        app:layout_constraintBottom_toTopOf="@+id/btnVaccin"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnMedecin">
 
     </ImageView>
 

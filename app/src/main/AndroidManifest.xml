@@ -22,9 +22,6 @@
             android:name=".activities.DetailActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.Medecin"
-            android:exported="false" />
-        <activity
             android:name=".activities.Medicaments"
             android:exported="false" />
         <activity

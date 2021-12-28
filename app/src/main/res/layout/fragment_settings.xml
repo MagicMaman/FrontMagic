@@ -12,7 +12,7 @@
         android:id="@+id/imageViewSettings"
         android:layout_width="match_parent"
         android:layout_height="350dp"
-        android:src="@drawable/background_seetings"
+        android:src="@drawable/musique1"
         app:layout_constraintEnd_toEndOf="parent"
         android:scaleType="centerCrop"
         android:background="@color/white"

@@ -17,7 +17,6 @@ class Sante : AppCompatActivity() {
     lateinit var btnTemperature: ImageView
     lateinit var btnVaccin: ImageView
     lateinit var btnMedicaments: ImageView
-    lateinit var btnMedecin: ImageView
     lateinit var btnHopitaux: ImageView
     //to stop the permission
     private var permissions = arrayOf(Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.INTERNET)
@@ -28,7 +27,6 @@ class Sante : AppCompatActivity() {
         btnTemperature=findViewById(R.id.btnTemperature)
         btnVaccin=findViewById(R.id.btnVaccin)
         btnMedicaments=findViewById(R.id.btnMedicaments)
-        btnMedecin=findViewById(R.id.btnMedecin)
         btnHopitaux=findViewById(R.id.btnHopitaux)
         context = this
         btnTemperature.setOnClickListener {
@@ -44,11 +42,6 @@ class Sante : AppCompatActivity() {
         btnMedicaments.setOnClickListener {
 
             val i= Intent(this,Medicaments::class.java)
-            startActivity(i)
-        }
-        btnMedecin.setOnClickListener {
-
-            val i= Intent(this,Medecin::class.java)
             startActivity(i)
         }
         btnHopitaux.setOnClickListener {

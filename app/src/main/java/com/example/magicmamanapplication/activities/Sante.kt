@@ -64,7 +64,7 @@ class Sante : AppCompatActivity() {
                     requestPermissions(permissions, PERMISSION_REQUEST)
                 }
             }else{
-                Toast.makeText(context, "Permission Denied",Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Permission Denied",Toast.LENGTH_SHORT).show()
             }
             //val i= Intent(this,Hospital::class.java)
             //startActivity(i)

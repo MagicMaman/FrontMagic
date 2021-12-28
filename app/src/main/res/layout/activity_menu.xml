@@ -39,11 +39,12 @@
             android:background="@drawable/bottomnav_bg"
             android:elevation="2dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0.505"
+            app:layout_constraintHorizontal_bias="0.526"
             app:layout_constraintLeft_toRightOf="parent"
             app:layout_constraintRight_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/frameLayout"
-            app:menu="@menu/bottom_menu"/>
+            app:layout_constraintVertical_bias="0.471"
+            app:menu="@menu/bottom_menu" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

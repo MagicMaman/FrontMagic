@@ -1,10 +1,12 @@
 package com.example.magicmamanapplication.fragments
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.magicmamanapplication.DataModel
@@ -23,7 +25,9 @@ class FavoriteFragment : Fragment() {
 
         recyclerView = view.findViewById(R.id.recyclerView)
         recyclerView.layoutManager = GridLayoutManager(requireActivity().application, 2)
-        photoAdapter = PhotoAdapter(requireActivity().application)
+        photoAdapter = PhotoAdapter(requireActivity().application){
+           Log.e("message","message")
+        }
         recyclerView.adapter = photoAdapter
 
         dataList.add(DataModel("Mon retour à la maison", R.drawable.icon_add))

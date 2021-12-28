@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="300dp"
-    android:layout_height="350dp"
-    android:background="@drawable/menu_bg"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_margin="4dp">
+    android:layout_width="300dp"
+    android:layout_height="340dp"
+    android:background="@drawable/menu_bg"
+    app:cardCornerRadius="50dp"
+    android:layout_margin="4dp"
+    app:cardElevation="8dp">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -28,10 +30,10 @@
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/img_view"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="-80dp"
+            android:layout_marginBottom="-69dp"
             android:src="@drawable/image_test">
 
         </ImageView>
     </RelativeLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

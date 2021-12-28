@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:layout_marginLeft="15dp"
-        android:layout_marginTop="136dp"
+        android:layout_marginTop="200dp"
         android:layout_marginRight="15dp"
         android:background="@drawable/edt_notes_background"
         android:clickable="false"
@@ -31,7 +31,7 @@
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:layout_marginLeft="15dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="36dp"
         android:layout_marginRight="15dp"
         android:background="@drawable/edt_notes_background"
         android:hint="Quantity"
@@ -47,7 +47,7 @@
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:layout_marginLeft="15dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="36dp"
         android:layout_marginRight="15dp"
         android:background="@drawable/edt_notes_background"
         android:drawableRight="@drawable/ic_add"
@@ -60,25 +60,13 @@
         app:layout_constraintTop_toBottomOf="@+id/edt_medication" />
 
     <ImageView
-        android:id="@+id/btn_save_bibrons"
+        android:id="@+id/btn_next_bibrons"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edt_notes_bibron"
-        app:srcCompat="@drawable/btn_save" />
-
-    <ImageView
-        android:id="@+id/btn_resume_bibrons"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_save_bibrons"
-        app:layout_constraintVertical_bias="0.014"
-        app:srcCompat="@drawable/btn_resume" />
+        app:layout_constraintTop_toBottomOf="@+id/edt_notes_bibron"
+        app:srcCompat="@drawable/btn_next" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,9 +8,11 @@ import com.example.magicmamanapplication.fragments.TimePickerFragment
 
 class Sommeill : AppCompatActivity() {
     lateinit var etTimeSommeill: EditText
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sommeill)
+
         etTimeSommeill=findViewById(R.id.etTimeSommeill)
         etTimeSommeill.setOnClickListener{ showTimePickerDialog()}
     }

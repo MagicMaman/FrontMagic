@@ -39,7 +39,7 @@ const val ID = "Id"
 
 
 class LoginTabFragment : Fragment() {
-    lateinit var txtSignup : TextView
+
     lateinit var checkBoxRememberMe: CheckBox
     lateinit var mSharedPref: SharedPreferences
     override fun onCreateView(
@@ -67,48 +67,6 @@ class LoginTabFragment : Fragment() {
         }
         return bind.root
     }
-
-    /*private fun shared() {
-        if (checkBoxRememberMe.isChecked) {
-            val paramObject1 = JSONObject()
-            paramObject1.put("email", edtTxtEmail.text.toString().trim())
-
-            val jsonParser = JsonParser()
-            var gsonObject1 = jsonParser.parse(paramObject1.toString()) as JsonObject
-            val retro = Retrofit().getRetroClinetInstance().create(MagicMamanApi::class.java)
-            retro.login(gsonObject1).enqueue(object : Callback<JsonObject> {
-
-                override fun onResponse(call: Call<JsonObject>, response: Response<JsonObject>) {
-                    if (response.code() == 200) {
-                        val user = response.body()?.get("name").toString()
-                        val id = response.body()?.get("_id").toString()
-                        val email = response.body()?.get("email").toString()
-                        val image = response.body()?.get("image").toString()
-                        val password = response.body()?.get("password").toString()
-                        val username = user.substring(1, user.length - 1)
-
-                        mSharedPref.edit().apply {
-                            putBoolean(IS_REMEMBRED, true)
-                            putString(EMAIL, email.substring(1, email.length - 1))
-                            putString(ID, id.substring(1, id.length - 1))
-                            putString(IMAGE, image.substring(1, image.length - 1))
-                            putString(PASSWORD, password.substring(1, password.length - 1))
-                            putString(NAME, user.substring(1, user.length - 1))
-                        }.apply()
-                    }
-                }
-
-                override fun onFailure(call: Call<JsonObject>, t: Throwable) {
-                    Log.e("Error", t.message.toString())
-                    Toast.makeText(context, "User not found", Toast.LENGTH_SHORT).show()
-                }
-            })
-        }else{
-            mSharedPref.edit().clear().apply()
-        }
-    }*/
-
-
 
     private fun doLogin() {
         val paramObject1 = JSONObject()
@@ -139,7 +97,6 @@ class LoginTabFragment : Fragment() {
                     putString(PASSWORD, password.substring(1, password.length -1))
                     putString(NAME,user.substring(1,user.length-1))
                 }.apply()
-
 
                 startActivity(intent)
             }

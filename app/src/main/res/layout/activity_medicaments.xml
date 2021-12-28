@@ -7,4 +7,92 @@
     tools:context=".activities.Medicaments"
     android:background="@drawable/background_medicaments">
 
+
+    <EditText
+        android:id="@+id/etTimeMedicaments"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/edt_notes_background"
+        android:clickable="false"
+        android:drawableRight="@drawable/ic_arrow_down"
+        android:focusable="false"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:hint="Choose the time"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:importantForAutofill="no"
+        android:inputType="time"></EditText>
+
+    <EditText
+        android:id="@+id/etMedicaments"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/edt_notes_background"
+        android:drawableEnd="@drawable/ic_edit"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:hint="Name of medication"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.466"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etTimeMedicaments"
+        android:inputType="text"></EditText>
+
+    <EditText
+        android:id="@+id/etMedicamentsQuantite"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/edt_notes_background"
+        android:drawableEnd="@drawable/ic_edit"
+        android:hint="Quantity"
+        android:inputType="number"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etMedicaments"></EditText>
+
+    <EditText
+        android:id="@+id/edt_notes_temperature"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/edt_notes_background"
+        android:drawableEnd="@drawable/ic_add"
+        android:hint="@string/notes"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.466"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etMedicamentsQuantite" />
+
+    <ImageView
+        android:id="@+id/btn_next_temperature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_notes_temperature"
+        app:srcCompat="@drawable/btn_next"
+        tools:ignore="ContentDescription" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

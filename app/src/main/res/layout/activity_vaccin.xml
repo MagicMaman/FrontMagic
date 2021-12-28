@@ -7,4 +7,74 @@
     tools:context=".activities.Vaccin"
     android:background="@drawable/background_vaccin">
 
+    <EditText
+        android:id="@+id/etTimeVaccin"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/edt_notes_background"
+        android:clickable="false"
+        android:drawableRight="@drawable/ic_arrow_down"
+        android:focusable="false"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:hint="Choose the time"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:importantForAutofill="no"
+        android:inputType="time"></EditText>
+
+    <EditText
+        android:id="@+id/etVaccin"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/edt_notes_background"
+        android:drawableEnd="@drawable/ic_edit"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:hint="Name of the vaccine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.466"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etTimeVaccin"
+        android:inputType="text"></EditText>
+
+    <EditText
+        android:id="@+id/edt_notes_vaccin"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/edt_notes_background"
+        android:drawableEnd="@drawable/ic_add"
+        android:hint="@string/notes"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etVaccin"
+        android:inputType="text"
+        android:importantForAutofill="no" />
+
+    <ImageView
+        android:id="@+id/btn_next_vaccin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_notes_vaccin"
+        app:srcCompat="@drawable/btn_next"
+        tools:ignore="ContentDescription" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

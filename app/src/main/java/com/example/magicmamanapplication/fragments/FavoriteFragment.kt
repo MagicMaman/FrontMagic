@@ -1,17 +1,23 @@
 package com.example.magicmamanapplication.fragments
 
+import android.app.Activity
+import android.content.Intent
+import android.content.pm.PackageManager
+import android.os.Build
 import android.os.Bundle
-import android.util.Log
+import android.Manifest
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.magicmamanapplication.DataModel
 import com.example.magicmamanapplication.R
 import com.example.magicmamanapplication.adapters.PhotoAdapter
+import kotlinx.android.synthetic.main.photo_layout.*
 
 class FavoriteFragment : Fragment() {
     private lateinit var recyclerView: RecyclerView
@@ -21,12 +27,29 @@ class FavoriteFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view =  inflater.inflate(R.layout.fragment_favorite, container, false)
+        val view = inflater.inflate(R.layout.fragment_favorite, container, false)
 
         recyclerView = view.findViewById(R.id.recyclerView)
         recyclerView.layoutManager = GridLayoutManager(requireActivity().application, 2)
-        photoAdapter = PhotoAdapter(requireActivity().application){
-           Log.e("message","message")
+        photoAdapter = PhotoAdapter(requireActivity().application) {
+            // Log.e("message","clicked")
+            //check runtime permission
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                if (ContextCompat.checkSelfPermission(requireContext(),android.Manifest.permission.READ_EXTERNAL_STORAGE ) ==
+                    PackageManager.PERMISSION_DENIED
+                ) {
+                    //permission denied
+                    val permissions = arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE);
+                    //show popup to request runtime permission
+                    requestPermissions(permissions, PERMISSION_CODE);
+                } else {
+                    //permission already granted
+                    pickImageFromGallery();
+                }
+            } else {
+                //system OS is < Marshmallow
+                pickImageFromGallery();
+            }
         }
         recyclerView.adapter = photoAdapter
 
@@ -66,5 +89,49 @@ class FavoriteFragment : Fragment() {
 
         return view
 
+    }
+
+    private fun pickImageFromGallery() {
+        //Intent to pick image
+        val intent = Intent(Intent.ACTION_PICK)
+        intent.type = "image/*"
+        startActivityForResult(intent, IMAGE_PICK_CODE)
+    }
+
+    companion object {
+        //image pick code
+        private val IMAGE_PICK_CODE = 1000;
+
+        //Permission code
+        val PERMISSION_CODE = 1001;
+    }
+
+    //handle requested permission result
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        when (requestCode) {
+            PERMISSION_CODE -> {
+                if (grantResults.size > 0 && grantResults[0] ==
+                    PackageManager.PERMISSION_GRANTED
+                ) {
+                    //permission from popup granted
+                    pickImageFromGallery()
+                } else {
+                    //permission from popup denied
+                    Toast.makeText(requireContext(), "Permission denied", Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
+
+
+    }
+    //handle result of picked image
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        if (resultCode == Activity.RESULT_OK && requestCode == IMAGE_PICK_CODE){
+            imagePhoto.setImageURI(data?.data)
+        }
     }
 }

@@ -16,6 +16,9 @@
         android:theme="@style/Theme.MagicMamanApplication"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".activities.MainActivity2"
+            android:exported="false" />
+        <activity
             android:name=".activities.ReminderActivity"
             android:exported="false" />
         <activity
@@ -108,6 +111,8 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyC4qKkSuxmCE53x54pE5DccrvQfBWAtBaY" />
+
+        <receiver android:name=".activities.AlarmReceiver" />
     </application>
 
 </manifest>

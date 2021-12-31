@@ -41,7 +41,7 @@ class Tete : AppCompatActivity()
             val time=binding.timeTV.text.toString()
             val note=binding.edtNotes.text.toString()
             saveTimeTv=view.findViewById(R.id.saveTimeTv)
-            saveTimeTv.text="$time"
+            saveTimeTv.text="$time"//recuperation de données de activity
 
             saveNotesTete=view.findViewById(R.id.saveNotesTete)
             saveNotesTete.text="$note"

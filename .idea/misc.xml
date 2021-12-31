@@ -98,13 +98,29 @@
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MagicMamanApplication/app/src/main/res/layout/song_ticket.xml" value="0.21" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MagicMamanApplication/app/src/main/res/menu/bottom_menu.xml" value="0.184375" />
         <entry key="..\:/Users/ASUS/AppData/Local/Android/Sdk/platforms/android-31/data/res/layout/simple_spinner_item.xml" value="0.18931159420289856" />
+        <entry key="..\:/Users/DELL/Desktop/miniprojet/FrontMagicMaman/app/src/main/res/layout/activity_bibrons.xml" value="0.1" />
         <entry key="..\:/Users/DELL/Desktop/miniprojet/FrontMagicMaman/app/src/main/res/layout/activity_main2.xml" value="0.4" />
         <entry key="..\:/Users/DELL/Desktop/miniprojet/FrontMagicMaman/app/src/main/res/layout/activity_menu.xml" value="0.1793478260869565" />
         <entry key="..\:/Users/DELL/Desktop/miniprojet/FrontMagicMaman/app/src/main/res/layout/activity_register.xml" value="0.1328125" />
         <entry key="..\:/Users/DELL/Desktop/miniprojet/FrontMagicMaman/app/src/main/res/layout/activity_reminder.xml" value="0.18177083333333333" />
+        <entry key="..\:/Users/DELL/Desktop/miniprojet/FrontMagicMaman/app/src/main/res/layout/activity_repas_solide.xml" value="0.264" />
+        <entry key="..\:/Users/DELL/Desktop/miniprojet/FrontMagicMaman/app/src/main/res/layout/activity_reveil.xml" value="0.15925925925925927" />
         <entry key="..\:/Users/DELL/Desktop/miniprojet/FrontMagicMaman/app/src/main/res/layout/activity_sante.xml" value="0.1793478260869565" />
+        <entry key="..\:/Users/DELL/Desktop/miniprojet/FrontMagicMaman/app/src/main/res/layout/activity_sommeill.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/DELL/Desktop/miniprojet/FrontMagicMaman/app/src/main/res/layout/activity_taille.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/DELL/Desktop/miniprojet/FrontMagicMaman/app/src/main/res/layout/activity_temperature.xml" value="0.1793478260869565" />
+        <entry key="..\:/Users/DELL/Desktop/miniprojet/FrontMagicMaman/app/src/main/res/layout/activity_tete.xml" value="0.17300724637681159" />
+        <entry key="..\:/Users/DELL/Desktop/miniprojet/FrontMagicMaman/app/src/main/res/layout/activity_vaccin.xml" value="0.264" />
         <entry key="..\:/Users/DELL/Desktop/miniprojet/FrontMagicMaman/app/src/main/res/layout/etat.xml" value="0.1793478260869565" />
+        <entry key="..\:/Users/DELL/Desktop/miniprojet/FrontMagicMaman/app/src/main/res/layout/fragment_btn_sheet_bibron.xml" value="0.264" />
+        <entry key="..\:/Users/DELL/Desktop/miniprojet/FrontMagicMaman/app/src/main/res/layout/fragment_btn_sheet_poids.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/DELL/Desktop/miniprojet/FrontMagicMaman/app/src/main/res/layout/fragment_btn_sheet_repas_solide.xml" value="0.264" />
+        <entry key="..\:/Users/DELL/Desktop/miniprojet/FrontMagicMaman/app/src/main/res/layout/fragment_btn_sheet_reveil.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/DELL/Desktop/miniprojet/FrontMagicMaman/app/src/main/res/layout/fragment_btn_sheet_sommeil.xml" value="0.1" />
+        <entry key="..\:/Users/DELL/Desktop/miniprojet/FrontMagicMaman/app/src/main/res/layout/fragment_btn_sheet_taille.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/DELL/Desktop/miniprojet/FrontMagicMaman/app/src/main/res/layout/fragment_btn_sheet_temperature.xml" value="0.1" />
+        <entry key="..\:/Users/DELL/Desktop/miniprojet/FrontMagicMaman/app/src/main/res/layout/fragment_btn_sheet_tete.xml" value="0.1" />
+        <entry key="..\:/Users/DELL/Desktop/miniprojet/FrontMagicMaman/app/src/main/res/layout/fragment_btn_sheet_vaccin.xml" value="0.1" />
         <entry key="..\:/Users/DELL/Desktop/miniprojet/FrontMagicMaman/app/src/main/res/layout/fragment_home.xml" value="0.1793478260869565" />
         <entry key="..\:/Users/DELL/Desktop/miniprojet/FrontMagicMaman/app/src/main/res/layout/fragment_resume.xml" value="0.1793478260869565" />
         <entry key="..\:/Users/DELL/Desktop/miniprojet/FrontMagicMaman/app/src/main/res/layout/fragment_settings.xml" value="0.4" />

@@ -6,11 +6,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/botton_sheet_background"
-    tools:context=".fragments.BtnSheetTete">
-
+    tools:context=".fragments.BtnSheetReveil">
 
     <ImageView
-        android:id="@+id/close"
+        android:id="@+id/close4"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginTop="16dp"
@@ -21,23 +20,23 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/txtDureeTete"
+        android:id="@+id/txtDureeSommeil"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
         android:layout_marginLeft="25dp"
         android:layout_marginRight="25dp"
         android:fontFamily="@font/tw_cen_bold"
-        android:text="Duration of breastfeeding"
+        android:text="Duration of Awaeking"
         android:textColor="@color/green2"
         android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.15"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/close" />
+        app:layout_constraintTop_toBottomOf="@+id/close4" />
 
     <TextView
-        android:id="@+id/saveTimeTv"
+        android:id="@+id/saveTimeTv4"
         android:layout_width="343dp"
         android:layout_height="55dp"
         android:layout_marginTop="36dp"
@@ -47,10 +46,9 @@
         android:paddingRight="25dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtDureeTete" />
-
+        app:layout_constraintTop_toBottomOf="@+id/txtDureeSommeil" />
     <TextView
-        android:id="@+id/notesTeteee"
+        android:id="@+id/notesReveil"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="25dp"
@@ -63,10 +61,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/saveTimeTv" />
+        app:layout_constraintTop_toBottomOf="@+id/saveTimeTv4" />
 
     <ScrollView
-        android:id="@+id/scrollView4"
+        android:id="@+id/scrollView5"
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:layout_marginLeft="25dp"
@@ -75,12 +73,12 @@
         android:layout_marginBottom="312dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.416"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/notesTeteee">
+        app:layout_constraintTop_toBottomOf="@+id/notesReveil"
+        app:layout_constraintVertical_bias="0.518">
 
         <TextView
-            android:id="@+id/saveNotesTete"
+            android:id="@+id/saveNotesReveil"
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:background="@drawable/edt_notes_background"
@@ -92,25 +90,33 @@
     </ScrollView>
 
     <ImageView
-        android:id="@+id/btn_confirm_tete"
+        android:id="@+id/btn_confirm_reveil"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="256dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btn_update_tete"
+        app:layout_constraintEnd_toStartOf="@+id/btn_update_reveil"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/btn_confirm" />
 
     <ImageView
-        android:id="@+id/btn_update_tete"
+        android:id="@+id/btn_update_reveil"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="256dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btn_confirm_tete"
+        app:layout_constraintStart_toEndOf="@+id/btn_confirm_reveil"
         app:srcCompat="@drawable/btn_update" />
+
+
+
+
+
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

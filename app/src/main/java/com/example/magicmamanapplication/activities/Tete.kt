@@ -10,6 +10,7 @@ import android.widget.TextView
 import com.example.magicmamanapplication.R
 import com.example.magicmamanapplication.databinding.ActivityTeteBinding
 import com.example.magicmamanapplication.fragments.BtnSheetTete
+import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import kotlin.math.roundToInt
 
@@ -28,9 +29,15 @@ class Tete : AppCompatActivity()
         setContentView(binding.root)
         binding.btnNextTete.setOnClickListener {
             val dialog = BottomSheetDialog(this, R.style.BottomSheetDialogTheme)
+            val offsetFromTop = 200
+            (dialog as? BottomSheetDialog)?.behavior?.apply {
+                isFitToContents = false
+                expandedOffset = offsetFromTop
+                state = BottomSheetBehavior.STATE_EXPANDED
+            }
             val view = layoutInflater.inflate(R.layout.fragment_btn_sheet_tete, null)
             val close = view.findViewById<ImageView>(R.id.close)
-            val mFragment = BtnSheetTete()
+
             close.setOnClickListener{
                 dialog.dismiss()
             }

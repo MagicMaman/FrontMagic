@@ -11,6 +11,7 @@
         android:id="@+id/sub_item_tv"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:focusable="false"
         android:text="Sub-Item TextView"
         android:textStyle="normal"
         android:textColor="@color/green2"

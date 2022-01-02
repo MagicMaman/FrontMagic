@@ -65,7 +65,7 @@
         app:layout_constraintTop_toBottomOf="@+id/etMedicaments" />
 
     <EditText
-        android:id="@+id/edt_notes_temperature"
+        android:id="@+id/edt_notes_medicament"
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:layout_marginLeft="15dp"
@@ -84,13 +84,13 @@
         app:layout_constraintTop_toBottomOf="@+id/etMedicamentsQuantite" />
 
     <ImageView
-        android:id="@+id/btn_next_temperature"
+        android:id="@+id/btn_next_medicament"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edt_notes_temperature"
+        app:layout_constraintTop_toBottomOf="@+id/edt_notes_medicament"
         app:srcCompat="@drawable/btn_next"
         tools:ignore="ContentDescription" />
 

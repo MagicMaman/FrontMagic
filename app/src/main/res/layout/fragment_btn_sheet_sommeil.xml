@@ -26,7 +26,7 @@
         android:layout_marginLeft="25dp"
         android:layout_marginRight="25dp"
         android:fontFamily="@font/tw_cen_bold"
-        android:text="Duration of Sleeping"
+        android:text="Sleep"
         android:textColor="@color/green2"
         android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -38,7 +38,7 @@
         android:id="@+id/saveTimeTv3"
         android:layout_width="343dp"
         android:layout_height="55dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="30dp"
         android:background="@drawable/edt_notes_background"
         android:gravity="center"
         android:paddingLeft="25dp"
@@ -46,13 +46,42 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtDureeSommeil" />
+
+    <TextView
+        android:id="@+id/txtDureeAwake"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:fontFamily="@font/tw_cen_bold"
+        android:text="Awake"
+        android:textColor="@color/green2"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/saveTimeTv3" />
+
+    <TextView
+        android:id="@+id/saveTimeAwakeTv3"
+        android:layout_width="343dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/edt_notes_background"
+        android:gravity="center"
+        android:paddingLeft="25dp"
+        android:paddingRight="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtDureeAwake" />
     <TextView
         android:id="@+id/notesSommeil"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="25dp"
-        android:layout_marginTop="36dp"
         android:layout_marginRight="25dp"
+        android:layout_marginTop="30dp"
         android:fontFamily="@font/tw_cen_bold"
         android:text="Notes"
         android:textColor="@color/green2"
@@ -60,27 +89,27 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/saveTimeTv3" />
+        app:layout_constraintTop_toBottomOf="@+id/saveTimeAwakeTv3" />
 
     <ScrollView
         android:id="@+id/scrollView4"
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:layout_marginLeft="25dp"
-        android:layout_marginTop="36dp"
         android:layout_marginRight="25dp"
-        android:layout_marginBottom="312dp"
+        android:layout_marginBottom="200dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/edt_notes_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/notesSommeil"
-        app:layout_constraintVertical_bias="0.518">
+        app:layout_constraintVertical_bias="0.524">
 
         <TextView
             android:id="@+id/saveNotesSommeil"
             android:layout_width="match_parent"
             android:layout_height="55dp"
-            android:background="@drawable/edt_notes_background"
             android:gravity="center"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
@@ -92,7 +121,7 @@
         android:id="@+id/btn_confirm_sommeil"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="256dp"
+        android:layout_marginBottom="100dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btn_update_sommeil"
         app:layout_constraintHorizontal_bias="0.5"
@@ -103,7 +132,7 @@
         android:id="@+id/btn_update_sommeil"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="256dp"
+        android:layout_marginBottom="100dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"

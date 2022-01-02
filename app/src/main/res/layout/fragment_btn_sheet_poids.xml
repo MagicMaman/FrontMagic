@@ -19,14 +19,14 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/txtDureeSommeil"
+        android:id="@+id/txtDureePoids"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
         android:layout_marginLeft="25dp"
         android:layout_marginRight="25dp"
         android:fontFamily="@font/tw_cen_bold"
-        android:text="Date and Time"
+        android:text="Date"
         android:textColor="@color/green2"
         android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -38,49 +38,75 @@
         android:id="@+id/saveTimeTv6"
         android:layout_width="343dp"
         android:layout_height="55dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/edt_notes_background"
         android:gravity="center"
         android:paddingLeft="25dp"
         android:paddingRight="25dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtDureeSommeil" />
+        app:layout_constraintTop_toBottomOf="@+id/txtDureePoids" />
+    <TextView
+        android:id="@+id/txtNamePoids"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="25dp"
+        android:fontFamily="@font/tw_cen_bold"
+        android:text="Poids"
+        android:textColor="@color/green2"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/saveTimeTv6" />
+
+    <TextView
+        android:id="@+id/savePoidsNameTv"
+        android:layout_width="343dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/edt_notes_background"
+        android:gravity="center"
+        android:paddingLeft="25dp"
+        android:paddingRight="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtNamePoids" />
+
     <TextView
         android:id="@+id/notesPoids"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="25dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="20dp"
         android:layout_marginRight="25dp"
         android:fontFamily="@font/tw_cen_bold"
         android:text="Notes"
         android:textColor="@color/green2"
         android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/saveTimeTv6" />
+        app:layout_constraintTop_toBottomOf="@+id/savePoidsNameTv" />
 
     <ScrollView
         android:id="@+id/scrollView7"
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:layout_marginLeft="25dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="20dp"
         android:layout_marginRight="25dp"
-        android:layout_marginBottom="312dp"
+        android:layout_marginBottom="200dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/notesPoids"
-        app:layout_constraintVertical_bias="0.518">
+        android:background="@drawable/edt_notes_background">
 
         <TextView
             android:id="@+id/saveNotesPoids"
             android:layout_width="match_parent"
             android:layout_height="55dp"
-            android:background="@drawable/edt_notes_background"
             android:gravity="center"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
@@ -92,7 +118,7 @@
         android:id="@+id/btn_confirm_poids"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="256dp"
+        android:layout_marginBottom="150dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btn_update_poids"
         app:layout_constraintHorizontal_bias="0.5"
@@ -103,7 +129,7 @@
         android:id="@+id/btn_update_poids"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="256dp"
+        android:layout_marginBottom="150dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"

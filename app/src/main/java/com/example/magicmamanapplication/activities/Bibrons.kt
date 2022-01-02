@@ -8,6 +8,7 @@ import android.widget.TextView
 import com.example.magicmamanapplication.R
 import com.example.magicmamanapplication.databinding.ActivityBibronsBinding
 import com.example.magicmamanapplication.fragments.TimePickerFragment
+import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 
 class Bibrons : AppCompatActivity() {
@@ -15,6 +16,7 @@ class Bibrons : AppCompatActivity() {
     lateinit var etTimeBibron: EditText
     lateinit var saveTimeTv2 : TextView
     lateinit var saveNotesBibron : TextView
+    lateinit var saveQuantityNameTv: TextView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,8 +30,15 @@ class Bibrons : AppCompatActivity() {
 
         binding.btnNextBibrons.setOnClickListener {
             val dialog = BottomSheetDialog(this, R.style.BottomSheetDialogTheme)
+            val offsetFromTop = 200
+            (dialog as? BottomSheetDialog)?.behavior?.apply {
+                isFitToContents = false
+                expandedOffset = offsetFromTop
+                state = BottomSheetBehavior.STATE_EXPANDED
+            }
             val view = layoutInflater.inflate(R.layout.fragment_btn_sheet_bibron,null)
             val close2 = view.findViewById<ImageView>(R.id.close2)
+            val btn_update_bibron = view.findViewById<ImageView>(R.id.btn_update_bibron)
 
             close2.setOnClickListener{
                 dialog.dismiss()
@@ -37,6 +46,10 @@ class Bibrons : AppCompatActivity() {
             dialog.setCancelable(false)
             dialog.setContentView(view)
             dialog.show()
+
+            btn_update_bibron.setOnClickListener {
+                dialog.dismiss()
+            }
 
             val time=binding.etTimeBibron.text.toString()
             val note=binding.edtNotesBibron.text.toString()
@@ -46,7 +59,10 @@ class Bibrons : AppCompatActivity() {
             saveTimeTv2.text="$time"//recuperation de données de activity
 
             saveNotesBibron=view.findViewById(R.id.saveNotesBibron)
-            saveNotesBibron.text="$quantity $note"
+            saveNotesBibron.text="$note"
+
+            saveQuantityNameTv=view.findViewById(R.id.saveQuantityNameTv)
+            saveQuantityNameTv.text="$quantity "
         }
     }
 

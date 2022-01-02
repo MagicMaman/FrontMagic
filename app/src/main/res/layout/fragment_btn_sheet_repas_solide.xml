@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -18,12 +17,13 @@
         app:layout_constraintHorizontal_bias="0.993"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/txtDureeRepas"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
         android:layout_marginLeft="25dp"
+        android:layout_marginTop="20dp"
         android:layout_marginRight="25dp"
         android:fontFamily="@font/tw_cen_bold"
         android:text="Dish Time "
@@ -33,11 +33,12 @@
         app:layout_constraintHorizontal_bias="0.15"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/close1" />
+
     <TextView
         android:id="@+id/saveTimeTv1"
         android:layout_width="343dp"
         android:layout_height="55dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/edt_notes_background"
         android:gravity="center"
         android:paddingLeft="25dp"
@@ -45,32 +46,61 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtDureeRepas" />
+
+    <TextView
+        android:id="@+id/txtNameDish"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="25dp"
+        android:fontFamily="@font/tw_cen_bold"
+        android:text="Name of the dish"
+        android:textColor="@color/green2"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/saveTimeTv1" />
+
+    <TextView
+        android:id="@+id/saveDishNameTv"
+        android:layout_width="343dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/edt_notes_background"
+        android:gravity="center"
+        android:paddingLeft="25dp"
+        android:paddingRight="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtNameDish" />
+
     <TextView
         android:id="@+id/notesRepas"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="25dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="20dp"
         android:layout_marginRight="25dp"
         android:fontFamily="@font/tw_cen_bold"
-        android:text="Notes And The dish name"
+        android:text="Notes"
         android:textColor="@color/green2"
         android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/saveTimeTv1" />
+        app:layout_constraintTop_toBottomOf="@+id/saveDishNameTv" />
+
     <ScrollView
         android:id="@+id/scrollView5"
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:layout_marginLeft="25dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="20dp"
         android:layout_marginRight="25dp"
-        android:layout_marginBottom="312dp"
+        android:layout_marginBottom="200dp"
+        android:background="@drawable/edt_notes_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.416"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/notesRepas">
 
@@ -78,7 +108,6 @@
             android:id="@+id/saveNotesRepas"
             android:layout_width="match_parent"
             android:layout_height="55dp"
-            android:background="@drawable/edt_notes_background"
             android:gravity="center"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
@@ -90,24 +119,23 @@
         android:id="@+id/btn_confirm_repas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="256dp"
+        android:layout_marginBottom="150dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btn_update_repas"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/btn_confirm" />
+        app:srcCompat="@drawable/btn_confirm"  />
 
     <ImageView
         android:id="@+id/btn_update_repas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="256dp"
+        android:layout_marginBottom="150dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btn_confirm_repas"
-        app:srcCompat="@drawable/btn_update" />
-
+        app:srcCompat="@drawable/btn_update"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

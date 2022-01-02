@@ -73,9 +73,6 @@
             android:name=".activities.Sons"
             android:exported="false" />
         <activity
-            android:name=".activities.Reveil"
-            android:exported="false" />
-        <activity
             android:name=".activities.Sommeill"
             android:exported="false" />
         <activity

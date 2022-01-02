@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".activities.Taille"
     android:background="@drawable/background_taille">
-    <EditText
+    <TextView
         android:id="@+id/etTimeTaille"
         android:layout_width="match_parent"
         android:layout_height="55dp"
@@ -15,11 +15,9 @@
         android:layout_marginRight="15dp"
         android:background="@drawable/edt_notes_background"
         android:clickable="false"
-        android:drawableRight="@drawable/ic_arrow_down"
-        android:focusable="false"
-        android:hint="Choose the time"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
+        tools:text="@tools:sample/date/ddmmyy"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,6 +32,7 @@
         android:layout_marginRight="15dp"
         android:background="@drawable/edt_notes_background"
         android:hint="Height"
+        android:inputType="number"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         app:layout_constraintEnd_toEndOf="parent"

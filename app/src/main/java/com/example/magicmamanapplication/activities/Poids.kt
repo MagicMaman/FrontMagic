@@ -9,6 +9,7 @@ import com.example.magicmamanapplication.R
 import com.example.magicmamanapplication.databinding.ActivityPoidsBinding
 import com.example.magicmamanapplication.databinding.ActivityTailleBinding
 import com.example.magicmamanapplication.fragments.TimePickerFragment
+import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 
 class Poids : AppCompatActivity() {
@@ -17,6 +18,7 @@ class Poids : AppCompatActivity() {
     lateinit var etTimePoids: EditText
     lateinit var saveTimeTv6: TextView
     lateinit var saveNotesPoids : TextView
+    lateinit var savePoidsNameTv: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,8 +31,19 @@ class Poids : AppCompatActivity() {
 
         binding.btnNextPoids.setOnClickListener {
             val dialog = BottomSheetDialog(this, R.style.BottomSheetDialogTheme)
+            val offsetFromTop = 200
+            (dialog as? BottomSheetDialog)?.behavior?.apply {
+                isFitToContents = false
+                expandedOffset = offsetFromTop
+                state = BottomSheetBehavior.STATE_EXPANDED
+            }
             val view = layoutInflater.inflate(R.layout.fragment_btn_sheet_poids,null)
             val close6 = view.findViewById<ImageView>(R.id.close6)
+            val btn_update_poids = view.findViewById<ImageView>(R.id.btn_update_poids)
+
+            btn_update_poids.setOnClickListener {
+                dialog.dismiss()
+            }
 
             close6.setOnClickListener{
                 dialog.dismiss()
@@ -47,7 +60,10 @@ class Poids : AppCompatActivity() {
             saveTimeTv6.text="$time"//recuperation de données de activity
 
             saveNotesPoids=view.findViewById(R.id.saveNotesPoids)
-            saveNotesPoids.text="$poids $note"
+            saveNotesPoids.text="$note"
+
+            savePoidsNameTv=view.findViewById(R.id.savePoidsNameTv)
+            savePoidsNameTv.text="$poids "
         }
 
     }

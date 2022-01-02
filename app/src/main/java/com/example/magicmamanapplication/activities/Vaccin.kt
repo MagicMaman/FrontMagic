@@ -6,9 +6,9 @@ import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
 import com.example.magicmamanapplication.R
-import com.example.magicmamanapplication.databinding.ActivityPoidsBinding
 import com.example.magicmamanapplication.databinding.ActivityVaccinBinding
 import com.example.magicmamanapplication.fragments.TimePickerFragment
+import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 
 class Vaccin : AppCompatActivity() {
@@ -16,6 +16,7 @@ class Vaccin : AppCompatActivity() {
     lateinit var etTimeVaccin: EditText
     lateinit var saveTimeTv7: TextView
     lateinit var saveNotesVaccin : TextView
+    lateinit var saveVaccinNameTv: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,8 +30,19 @@ class Vaccin : AppCompatActivity() {
 
         binding.btnNextVaccin.setOnClickListener {
             val dialog = BottomSheetDialog(this, R.style.BottomSheetDialogTheme)
+            val offsetFromTop = 200
+            (dialog as? BottomSheetDialog)?.behavior?.apply {
+                isFitToContents = false
+                expandedOffset = offsetFromTop
+                state = BottomSheetBehavior.STATE_EXPANDED
+            }
             val view = layoutInflater.inflate(R.layout.fragment_btn_sheet_vaccin,null)
             val close7 = view.findViewById<ImageView>(R.id.close7)
+            val btn_update_vaccin = view.findViewById<ImageView>(R.id.btn_update_vaccin)
+
+            btn_update_vaccin.setOnClickListener {
+                dialog.dismiss()
+            }
 
 
             close7.setOnClickListener{
@@ -49,7 +61,10 @@ class Vaccin : AppCompatActivity() {
             saveTimeTv7.text="$time"//recuperation de données de activity
 
             saveNotesVaccin=view.findViewById(R.id.saveNotesVaccin)
-            saveNotesVaccin.text="$vaccin $note"
+            saveNotesVaccin.text="$note"
+
+            saveVaccinNameTv=view.findViewById(R.id.saveVaccinNameTv)
+            saveVaccinNameTv.text="$vaccin"
         }
 
     }

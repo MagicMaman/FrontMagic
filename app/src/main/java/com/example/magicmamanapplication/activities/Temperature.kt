@@ -9,6 +9,7 @@ import com.example.magicmamanapplication.R
 import com.example.magicmamanapplication.databinding.ActivityTemperatureBinding
 import com.example.magicmamanapplication.databinding.ActivityVaccinBinding
 import com.example.magicmamanapplication.fragments.TimePickerFragment
+import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 
 class Temperature : AppCompatActivity() {
@@ -16,6 +17,7 @@ class Temperature : AppCompatActivity() {
     lateinit var etTimeTemperature: EditText
     lateinit var saveTimeTv8: TextView
     lateinit var saveNotesTemperature : TextView
+    lateinit var saveFeverNameTv: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,8 +29,19 @@ class Temperature : AppCompatActivity() {
         etTimeTemperature.setOnClickListener{ showTimePickerDialog()}
         binding.btnNextTemperature.setOnClickListener {
             val dialog = BottomSheetDialog(this, R.style.BottomSheetDialogTheme)
+            val offsetFromTop = 200
+            (dialog as? BottomSheetDialog)?.behavior?.apply {
+                isFitToContents = false
+                expandedOffset = offsetFromTop
+                state = BottomSheetBehavior.STATE_EXPANDED
+            }
             val view = layoutInflater.inflate(R.layout.fragment_btn_sheet_temperature,null)
             val close8 = view.findViewById<ImageView>(R.id.close8)
+            val btn_update_temperature = view.findViewById<ImageView>(R.id.btn_update_temperature)
+
+            btn_update_temperature.setOnClickListener {
+                dialog.dismiss()
+            }
 
 
             close8.setOnClickListener{
@@ -47,7 +60,10 @@ class Temperature : AppCompatActivity() {
             saveTimeTv8.text="$time"//recuperation de données de activity
 
             saveNotesTemperature=view.findViewById(R.id.saveNotesTemperature)
-            saveNotesTemperature.text="$temperature $note"
+            saveNotesTemperature.text="$note"
+
+            saveFeverNameTv=view.findViewById(R.id.saveFeverNameTv)
+            saveFeverNameTv.text="$temperature"
         }
 
 

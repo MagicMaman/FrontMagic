@@ -14,7 +14,6 @@ class Sommeil : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sommeil)
         btnSommeil=findViewById(R.id.btnSommeil)
-        btnReveil=findViewById(R.id.btnReveil)
         btnSons=findViewById(R.id.btnSons)
 
         btnSommeil.setOnClickListener {
@@ -22,11 +21,7 @@ class Sommeil : AppCompatActivity() {
             val i= Intent(this, Sommeill::class.java)
             startActivity(i)
         }
-        btnReveil.setOnClickListener {
 
-            val i= Intent(this, Reveil::class.java)
-            startActivity(i)
-        }
         btnSons.setOnClickListener {
 
             val i= Intent(this, Sons::class.java)

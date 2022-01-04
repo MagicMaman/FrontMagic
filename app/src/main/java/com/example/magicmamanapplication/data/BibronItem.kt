@@ -1,10 +1,10 @@
 package com.example.magicmamanapplication.data
 
-data class SolideItem(
-    val Name: String,
+data class BibronItem(
     val __v: Int,
-    val baby: String,
     val _id: String,
+    val baby: String,
     val notes: String,
+    val quantity: String,
     val time: String
 )

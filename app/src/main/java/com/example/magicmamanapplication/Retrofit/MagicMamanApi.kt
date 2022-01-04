@@ -1,5 +1,6 @@
 package com.example.magicmamanapplication.Retrofit
 
+import com.example.magicmamanapplication.data.BibronItem
 import com.example.magicmamanapplication.data.SolideItem
 import com.example.magicmamanapplication.data.teteItem
 import com.google.gson.JsonObject
@@ -36,5 +37,12 @@ interface MagicMamanApi {
         @Query("_sort") sort: String,
         @Query("_order") order: String
     ): Response<List<SolideItem>>
+
+    @GET("/bibron/")
+    suspend fun getbibron(
+        @Query("userId") Id: Int,
+        @Query("_sort") sort: String,
+        @Query("_order") order: String
+    ): Response<List<BibronItem>>
 
 }

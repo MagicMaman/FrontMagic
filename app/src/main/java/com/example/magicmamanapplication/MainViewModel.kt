@@ -4,6 +4,7 @@ package com.example.magicmamanapplication
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.magicmamanapplication.data.BibronItem
 import com.example.magicmamanapplication.data.SolideItem
 import com.example.magicmamanapplication.data.teteItem
 import com.example.magicmamanapplication.repository.Repository
@@ -15,6 +16,7 @@ class MainViewModel(private val repository: Repository): ViewModel() {
 
     var myCustomTete: MutableLiveData<Response<List<teteItem>>> = MutableLiveData()
     var myCustomSolide: MutableLiveData<Response<List<SolideItem>>> = MutableLiveData()
+    var myCustomBibron: MutableLiveData<Response<List<BibronItem>>> = MutableLiveData()
 
 
     fun getCustomTete(userId: Int, sort: String, order: String) {
@@ -28,6 +30,13 @@ class MainViewModel(private val repository: Repository): ViewModel() {
         viewModelScope.launch {
             val response = repository.getCustomsolide(userId, sort, order)
             myCustomSolide.value = response
+        }
+    }
+
+    fun myCustomBibron(userId: Int, sort: String, order: String) {
+        viewModelScope.launch {
+            val response = repository.getCustombibron(userId, sort, order)
+            myCustomBibron.value = response
         }
     }
 

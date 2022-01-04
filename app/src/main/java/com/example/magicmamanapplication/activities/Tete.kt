@@ -30,7 +30,11 @@ class Tete : AppCompatActivity()
             val dialog = BottomSheetDialog(this, R.style.BottomSheetDialogTheme)
             val view = layoutInflater.inflate(R.layout.fragment_btn_sheet_tete, null)
             val close = view.findViewById<ImageView>(R.id.close)
-            val mFragment = BtnSheetTete()
+            val btn_update_tete = view.findViewById<ImageView>(R.id.btn_update_tete)
+            btn_update_tete.setOnClickListener {
+                dialog.dismiss()
+            }
+
             close.setOnClickListener{
                 dialog.dismiss()
             }

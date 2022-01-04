@@ -1,9 +1,6 @@
 package com.example.magicmamanapplication.Retrofit
 
-import com.example.magicmamanapplication.data.BibronItem
-import com.example.magicmamanapplication.data.SolideItem
-import com.example.magicmamanapplication.data.SommeilItem
-import com.example.magicmamanapplication.data.teteItem
+import com.example.magicmamanapplication.data.*
 import com.google.gson.JsonObject
 import retrofit2.Call
 import retrofit2.Response
@@ -52,5 +49,40 @@ interface MagicMamanApi {
         @Query("_sort") sort: String,
         @Query("_order") order: String
     ): Response<List<SommeilItem>>
+
+    @GET("/taille/")
+    suspend fun gettaille(
+        @Query("userId") Id: Int,
+        @Query("_sort") sort: String,
+        @Query("_order") order: String
+    ): Response<List<TailleItem>>
+
+    @GET("/poids/")
+    suspend fun getpoids(
+        @Query("userId") Id: Int,
+        @Query("_sort") sort: String,
+        @Query("_order") order: String
+    ): Response<List<PoidsItem>>
+
+    @GET("/temperature/")
+    suspend fun gettemperature(
+        @Query("userId") Id: Int,
+        @Query("_sort") sort: String,
+        @Query("_order") order: String
+    ): Response<List<TemperatureItem>>
+
+    @GET("/medicament/")
+    suspend fun getmedicament(
+        @Query("userId") Id: Int,
+        @Query("_sort") sort: String,
+        @Query("_order") order: String
+    ): Response<List<MedicamentItem>>
+
+    @GET("/vaccin/")
+    suspend fun getvaccin(
+        @Query("userId") Id: Int,
+        @Query("_sort") sort: String,
+        @Query("_order") order: String
+    ): Response<List<VaccinItem>>
 
 }

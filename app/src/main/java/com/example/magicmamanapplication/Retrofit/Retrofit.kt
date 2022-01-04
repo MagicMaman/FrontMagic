@@ -6,7 +6,7 @@ import retrofit2.Retrofit
 
 
 class Retrofit {
-    var BASE_URL = "http://172.17.3.201:3000/" // Localhost will be changed to 10.0.2.2 in Emulator
+    var BASE_URL = "http://192.168.43.114:3000/" // Localhost will be changed to 10.0.2.2 in Emulator
 
     fun getRetroClinetInstance() : Retrofit{
 

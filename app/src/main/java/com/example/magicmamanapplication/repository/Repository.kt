@@ -1,10 +1,7 @@
 package com.example.magicmamanapplication.repository
 
 import com.example.magicmamanapplication.Retrofit.RetrofitInstance
-import com.example.magicmamanapplication.data.BibronItem
-import com.example.magicmamanapplication.data.SolideItem
-import com.example.magicmamanapplication.data.SommeilItem
-import com.example.magicmamanapplication.data.teteItem
+import com.example.magicmamanapplication.data.*
 import retrofit2.Response
 
 class Repository {
@@ -23,6 +20,26 @@ class Repository {
 
     suspend fun getCustomsommeil(userId: Int, sort: String, order: String): Response<List<SommeilItem>> {
         return RetrofitInstance.api.getsommeil(userId, sort, order)
+    }
+
+    suspend fun getCustomtaille(userId: Int, sort: String, order: String): Response<List<TailleItem>> {
+        return RetrofitInstance.api.gettaille(userId, sort, order)
+    }
+
+    suspend fun getCustompoids(userId: Int, sort: String, order: String): Response<List<PoidsItem>> {
+        return RetrofitInstance.api.getpoids(userId, sort, order)
+    }
+
+    suspend fun getCustomvaccin(userId: Int, sort: String, order: String): Response<List<VaccinItem>> {
+        return RetrofitInstance.api.getvaccin(userId, sort, order)
+    }
+
+    suspend fun getCustommedicament(userId: Int, sort: String, order: String): Response<List<MedicamentItem>> {
+        return RetrofitInstance.api.getmedicament(userId, sort, order)
+    }
+
+    suspend fun getCustomtemperature(userId: Int, sort: String, order: String): Response<List<TemperatureItem>> {
+        return RetrofitInstance.api.gettemperature(userId, sort, order)
     }
 
 }

@@ -2,6 +2,7 @@ package com.example.magicmamanapplication.Retrofit
 
 import com.example.magicmamanapplication.data.BibronItem
 import com.example.magicmamanapplication.data.SolideItem
+import com.example.magicmamanapplication.data.SommeilItem
 import com.example.magicmamanapplication.data.teteItem
 import com.google.gson.JsonObject
 import retrofit2.Call
@@ -44,5 +45,12 @@ interface MagicMamanApi {
         @Query("_sort") sort: String,
         @Query("_order") order: String
     ): Response<List<BibronItem>>
+
+    @GET("/endormissement/")
+    suspend fun getsommeil(
+        @Query("userId") Id: Int,
+        @Query("_sort") sort: String,
+        @Query("_order") order: String
+    ): Response<List<SommeilItem>>
 
 }

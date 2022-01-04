@@ -3,6 +3,7 @@ package com.example.magicmamanapplication.repository
 import com.example.magicmamanapplication.Retrofit.RetrofitInstance
 import com.example.magicmamanapplication.data.BibronItem
 import com.example.magicmamanapplication.data.SolideItem
+import com.example.magicmamanapplication.data.SommeilItem
 import com.example.magicmamanapplication.data.teteItem
 import retrofit2.Response
 
@@ -18,6 +19,10 @@ class Repository {
 
     suspend fun getCustombibron(userId: Int, sort: String, order: String): Response<List<BibronItem>> {
         return RetrofitInstance.api.getbibron(userId, sort, order)
+    }
+
+    suspend fun getCustomsommeil(userId: Int, sort: String, order: String): Response<List<SommeilItem>> {
+        return RetrofitInstance.api.getsommeil(userId, sort, order)
     }
 
 }

@@ -11,9 +11,7 @@ import com.google.android.material.tabs.TabLayoutMediator
 
 class Register : AppCompatActivity() {
     var tabTitle = arrayOf("Sign In ", "Register")
-    lateinit var FloatFb:FloatingActionButton
-    lateinit var FloatTwitter:FloatingActionButton
-    lateinit var FloatGoogle : FloatingActionButton
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
@@ -25,15 +23,6 @@ class Register : AppCompatActivity() {
             tab,position ->
             tab.text = tabTitle[position]
         }.attach()
-
-
-
-        FloatFb = findViewById(R.id.FloatFb)
-        FloatTwitter = findViewById(R.id.FloatTwitter)
-        FloatGoogle = findViewById(R.id.FloatGoogle)
-
-
-
 
     }
 }

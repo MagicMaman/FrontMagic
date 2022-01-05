@@ -92,4 +92,15 @@ interface MagicMamanApi {
     @Path("gendre") gendre:String
 )
 
+//router.get('/storee/:babyy/:timee/:notess',teteController.store)
+    //http://localhost:3000/baby/storee/malek@azer.com/pere/ayadi/12-12-1999/male
+    @GET("/tete/storee/{babyy}/{timee}/{notess}")
+    suspend fun ajoutTete(
+        @Path("babyy") babyy:String,
+        @Path("timee") timee:String,
+        @Path("notess") notess:String
+    )
+
+
+
 }

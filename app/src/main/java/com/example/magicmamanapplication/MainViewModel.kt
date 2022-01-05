@@ -94,5 +94,13 @@ class MainViewModel(private val repository: Repository): ViewModel() {
 
     }
 
+    fun addtete(str: String,str2: String,str3: String){
+        viewModelScope.launch {
+            val response= repository.addtete(str,str2,str3)
+            //myResponse4.value=response
+        }
+
+    }
+
 
 }

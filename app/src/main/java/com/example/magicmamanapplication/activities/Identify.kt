@@ -8,6 +8,7 @@ import android.content.pm.PackageManager
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.Settings.Global.getString
 import android.util.Log
 import android.view.View
 import android.widget.*
@@ -34,45 +35,67 @@ class Identify : AppCompatActivity() {
     lateinit var spin:Spinner
     lateinit var prenom:EditText
     lateinit var annif:EditText
-   // lateinit var garconGender:RadioButton
-    //lateinit var filleGender:RadioButton
+    //lateinit var radgarcon: RadioButton
+   // lateinit var radfille: RadioButton
     lateinit var btnSuivant: ImageView
 
-
-    lateinit var radgarcon: RadioButton
-    lateinit var radfille: RadioButton
-   var gender=""
+    //var gender=""
     var text=""
+    var  gender =""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_identify)
-       spin=findViewById(R.id.spinnerLien)
+        spin=findViewById(R.id.spinnerLien)
         prenom=findViewById(R.id.edtTxtPrenom)
         annif=findViewById(R.id.edtTxtAnniv)
-        radgarcon=findViewById(R.id.radBtnG)
-        radfille=findViewById(R.id.radBtnF)
+        //radgarcon=findViewById(R.id.radBtnG)
+      //  radfille=findViewById(R.id.radBtnF)
+       // radfille=findViewById(R.id.radBtnF)
+       // radioGroup2=findViewById(R.id.radioGroup2)
         btnSuivant=findViewById(R.id.btnSuivant)
 
 
+      /*  radgarcon.isChecked=true
+        val i =radfille.isChecked
+        Log.e("i",i.toString())
 
+        val g = radgarcon.isChecked
+        Log.e("g",g.toString())
+        if(radfille.isChecked){
 
-        if(radBtnF.isChecked){
-            gender  += "fille"
-        }else{
-            gender += "garcon"
+            gender  = "fille"
+            Log.e("gender","if fille")
+        }
+        if(radgarcon.isChecked){
+            gender = "garcon"
+            Log.e("gender","if garson")
+
+        }*/
+        val switchGender = findViewById(R.id.switchGender) as Switch
+        switchGender.setOnCheckedChangeListener { buttonView, isChecked ->
+            if (isChecked) {
+                switchGender.text= getString(R.string.fille)
+                gender="fille"
+                Log.e("gender"," fille")
+
+            } else {
+                switchGender.text= getString(R.string.garçon)
+                gender="garçon"
+                Log.e("gender"," garçon")
+            }
         }
 
-        //val spinnerLien : Spinner = findViewById(R.id.spinnerLien)
+
         btnSuivant.setOnClickListener {
 
-//val emaiil=intent.getStringExtra("email")
+             //val emaiil=intent.getStringExtra("email")
             //Log.e("emailrec",emaiil.toString())
             val repository = Repository()
             val viewModelFactory = MainViewModelFactory(repository)
             var viewModel = ViewModelProvider(this, viewModelFactory).get(MainViewModel::class.java)
             // viewModel.getCustomPosts(5,"id", "desc")
-            viewModel.addbaby("rayen@esprit.tn",text,prenom.text.toString(),annif.text.toString(),gender)
+            viewModel.addbaby("rayen@esprit.tn",text,prenom.text.toString(),annif.text.toString(),"garcon")
 
 
            val i= Intent(this,Menu::class.java)
@@ -81,6 +104,7 @@ class Identify : AppCompatActivity() {
         }
 
         val lienNames = arrayOf("Mère","Père","Partenaire","Grand-parent","Oncle ou Tante","Ami(e)")
+
         val arrayAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, lienNames )
         // attached arrayadapter to spinner
         spinnerLien.adapter = arrayAdapter
@@ -90,14 +114,14 @@ class Identify : AppCompatActivity() {
             }
 
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-
+                text = spinnerLien.getSelectedItem().toString()
+                Log.e("spiner",text)
 
             }
 
          }
 
-         text = spinnerLien.getSelectedItem().toString()
-        Log.d("spinner",text)
+         Log.d("spinner",text)
 
         imgHead.setOnClickListener {
             //check runtime permission

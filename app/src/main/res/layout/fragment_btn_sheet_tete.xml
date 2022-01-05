@@ -73,12 +73,12 @@
         android:layout_marginTop="36dp"
         android:layout_marginRight="25dp"
         android:layout_marginBottom="312dp"
+        android:background="@drawable/edt_notes_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.416"
         app:layout_constraintStart_toStartOf="parent"
-        android:background="@drawable/edt_notes_background"
-        app:layout_constraintTop_toBottomOf="@+id/notesTeteee">
+        app:layout_constraintTop_toBottomOf="@+id/notesTeteee"
+        app:layout_constraintVertical_bias="0.181">
 
         <TextView
             android:id="@+id/saveNotesTete"

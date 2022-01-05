@@ -46,4 +46,11 @@ class Repository {
 
 
     }
+
+
+    suspend fun addtete(str: String,str2: String,str3: String) {
+        return RetrofitInstance.api.ajoutTete(str,str2,str3)
+
+
+    }
 }

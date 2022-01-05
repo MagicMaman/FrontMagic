@@ -7,9 +7,14 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
+import androidx.lifecycle.ViewModelProvider
+import com.example.magicmamanapplication.MainViewModel
+import com.example.magicmamanapplication.MainViewModelFactory
 import com.example.magicmamanapplication.R
 import com.example.magicmamanapplication.databinding.ActivityTeteBinding
 import com.example.magicmamanapplication.fragments.BtnSheetTete
+import com.example.magicmamanapplication.repository.Repository
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import kotlin.math.roundToInt
 
@@ -31,8 +36,30 @@ class Tete : AppCompatActivity()
             val view = layoutInflater.inflate(R.layout.fragment_btn_sheet_tete, null)
             val close = view.findViewById<ImageView>(R.id.close)
             val btn_update_tete = view.findViewById<ImageView>(R.id.btn_update_tete)
+            val btn_submit= view.findViewById<ImageView>(R.id.btn_confirm_tete)
+
             btn_update_tete.setOnClickListener {
                 dialog.dismiss()
+            }
+            val time=binding.timeTV.text.toString()
+            val note=binding.edtNotes.text.toString()
+
+
+            saveTimeTv=view.findViewById(R.id.saveTimeTv)
+            saveTimeTv.text="$time"//recuperation de données de activity
+
+            saveNotesTete=view.findViewById(R.id.saveNotesTete)
+            saveNotesTete.text="$note"
+
+            btn_submit.setOnClickListener {
+                val repository = Repository()
+                val viewModelFactory = MainViewModelFactory(repository)
+                var viewModel = ViewModelProvider(this, viewModelFactory).get(MainViewModel::class.java)
+                // viewModel.getCustomPosts(5,"id", "desc")
+                viewModel.addtete("baby","$note","$time",)
+                // Toast.makeText(this,"good",Toast.LENGTH_SHORT).show()
+                //Log.e("jawekbehi",textv2.text.toString())
+                Toast.makeText(this,"goood",Toast.LENGTH_SHORT).show()
             }
 
             close.setOnClickListener{
@@ -42,13 +69,8 @@ class Tete : AppCompatActivity()
             dialog.setContentView(view)
             dialog.show()
 
-            val time=binding.timeTV.text.toString()
-            val note=binding.edtNotes.text.toString()
-            saveTimeTv=view.findViewById(R.id.saveTimeTv)
-            saveTimeTv.text="$time"//recuperation de données de activity
 
-            saveNotesTete=view.findViewById(R.id.saveNotesTete)
-            saveNotesTete.text="$note"
+
         }
         binding.startStopButton.setOnClickListener { startStopTimer() }
         binding.resetButton.setOnClickListener { resetTimer() }

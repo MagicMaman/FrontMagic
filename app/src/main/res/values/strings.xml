@@ -7,4 +7,6 @@
     <string name="choose_the_time">Choose the time</string>
     <string name="quantity">Quantity</string>
     <string name="name_of_medication">Name of medication</string>
+    <string name="garçon">Garçon</string>
+    <string name="fille">Fille</string>
 </resources>

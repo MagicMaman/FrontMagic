@@ -41,5 +41,9 @@ class Repository {
     suspend fun getCustomtemperature(userId: Int, sort: String, order: String): Response<List<TemperatureItem>> {
         return RetrofitInstance.api.gettemperature(userId, sort, order)
     }
+    suspend fun addbaby(str: String,str2: String,str3: String,str4: String,str5: String) {
+        return RetrofitInstance.api.Identifyy(str,str2,str3,str4,str5)
 
+
+    }
 }

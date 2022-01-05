@@ -12,10 +12,14 @@ import android.util.Log
 import android.view.View
 import android.widget.*
 import androidx.core.content.ContextCompat
+import androidx.lifecycle.ViewModelProvider
+import com.example.magicmamanapplication.MainViewModel
+import com.example.magicmamanapplication.MainViewModelFactory
 import com.example.magicmamanapplication.R
 import com.example.magicmamanapplication.Retrofit.MagicMamanApi
 import com.example.magicmamanapplication.Retrofit.Retrofit
 import com.example.magicmamanapplication.fragments.FavoriteFragment
+import com.example.magicmamanapplication.repository.Repository
 import com.google.gson.JsonObject
 import com.google.gson.JsonParser
 import kotlinx.android.synthetic.main.activity_identify.*
@@ -27,31 +31,53 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class Identify : AppCompatActivity() {
+    lateinit var spin:Spinner
+    lateinit var prenom:EditText
+    lateinit var annif:EditText
+   // lateinit var garconGender:RadioButton
+    //lateinit var filleGender:RadioButton
     lateinit var btnSuivant: ImageView
-    lateinit var radBtnG: RadioButton
-    lateinit var radBtnF: RadioButton
-    lateinit var gender: String
+
+
+    lateinit var radgarcon: RadioButton
+    lateinit var radfille: RadioButton
+   var gender=""
+    var text=""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_identify)
-        radBtnG=findViewById(R.id.radBtnG)
-        radBtnF=findViewById(R.id.radBtnF)
+       spin=findViewById(R.id.spinnerLien)
+        prenom=findViewById(R.id.edtTxtPrenom)
+        annif=findViewById(R.id.edtTxtAnniv)
+        radgarcon=findViewById(R.id.radBtnG)
+        radfille=findViewById(R.id.radBtnF)
         btnSuivant=findViewById(R.id.btnSuivant)
 
 
+
+
         if(radBtnF.isChecked){
-            gender  = "fille"
+            gender  += "fille"
+        }else{
+            gender += "garcon"
         }
-        else {
-            gender  = "garcon"
-        }
-        val spinnerLien : Spinner = findViewById(R.id.spinnerLien)
+
+        //val spinnerLien : Spinner = findViewById(R.id.spinnerLien)
         btnSuivant.setOnClickListener {
 
-           /*val i= Intent(this,Menu::class.java)
-           startActivity(i)*/
-            doStore(gender)
+//val emaiil=intent.getStringExtra("email")
+            //Log.e("emailrec",emaiil.toString())
+            val repository = Repository()
+            val viewModelFactory = MainViewModelFactory(repository)
+            var viewModel = ViewModelProvider(this, viewModelFactory).get(MainViewModel::class.java)
+            // viewModel.getCustomPosts(5,"id", "desc")
+            viewModel.addbaby("rayen@esprit.tn",text,prenom.text.toString(),annif.text.toString(),gender)
+
+
+           val i= Intent(this,Menu::class.java)
+           startActivity(i)
+            //doStore(gender)
         }
 
         val lienNames = arrayOf("Mère","Père","Partenaire","Grand-parent","Oncle ou Tante","Ami(e)")
@@ -65,9 +91,13 @@ class Identify : AppCompatActivity() {
 
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
 
+
             }
 
          }
+
+         text = spinnerLien.getSelectedItem().toString()
+        Log.d("spinner",text)
 
         imgHead.setOnClickListener {
             //check runtime permission
@@ -136,7 +166,7 @@ class Identify : AppCompatActivity() {
         }
     }
 
-    private fun doStore(gender: String) {
+   /* private fun doStore(gender: String) {
         val paramObject1 = JSONObject()
         //paramObject1.put("email", edtTxtEmail.text.toString().trim())//1)eli 3andi fl user2)part rapport eli 3andi fl txt fl application
         paramObject1.put("name", edtTxtPrenom.text.toString().trim())
@@ -164,4 +194,6 @@ class Identify : AppCompatActivity() {
         })
 
     }
+
+    */
 }

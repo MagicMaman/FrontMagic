@@ -24,7 +24,6 @@ import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-
 const val PREF_NAME = "shared"
 const val IS_REMEMBRED = "IS_REMEMBRED"
 const val NAME = "NAME"
@@ -54,6 +53,8 @@ class LoginTabFragment : Fragment() {
         if(mSharedPref.getBoolean(IS_REMEMBRED, true)){
             val intent= Intent(this@LoginTabFragment.requireContext(), Identify::class.java)
             startActivity(intent)
+           // Log.e("yamalek",edtTxtEmail.text.toString())
+
         }
         bind.imageView.setOnClickListener {
           /*  val intent= Intent(this@LoginTabFragment.requireContext(), Identify::class.java)

@@ -4,10 +4,7 @@ import com.example.magicmamanapplication.data.*
 import com.google.gson.JsonObject
 import retrofit2.Call
 import retrofit2.Response
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.POST
-import retrofit2.http.Query
+import retrofit2.http.*
 
 interface MagicMamanApi {
     @POST("/signin")
@@ -84,5 +81,15 @@ interface MagicMamanApi {
         @Query("_sort") sort: String,
         @Query("_order") order: String
     ): Response<List<VaccinItem>>
+
+//http://localhost:3000/baby/storee/malek@azer.com/pere/ayadi/12-12-1999/male
+    @GET("/baby/storee/{email}/{liaison}/{prenom}/{annif}/{gendre}")
+    suspend fun Identifyy(
+    @Path("email") email:String,
+    @Path("liaison") liaison:String,
+    @Path("prenom") prenom:String,
+    @Path("annif") annif:String,
+    @Path("gendre") gendre:String
+)
 
 }

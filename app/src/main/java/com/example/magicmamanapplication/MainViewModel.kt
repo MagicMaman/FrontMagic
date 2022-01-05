@@ -86,5 +86,13 @@ class MainViewModel(private val repository: Repository): ViewModel() {
         }
     }
 
+    fun addbaby(str: String,str2: String,str3: String,str4: String,str5: String){
+        viewModelScope.launch {
+            val response= repository.addbaby(str,str2,str3,str4,str5)
+            //myResponse4.value=response
+        }
+
+    }
+
 
 }

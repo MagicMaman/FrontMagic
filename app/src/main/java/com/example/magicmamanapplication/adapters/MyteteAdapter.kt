@@ -40,4 +40,10 @@ class MyteteAdapter : RecyclerView.Adapter<MyteteAdapter.MyViewHolder>(){
 
     }
 
+    fun deleteItem( i : Int){
+        myList.drop(i)
+        //myList.removeAt(i)
+        notifyDataSetChanged()
+    }
+
 }

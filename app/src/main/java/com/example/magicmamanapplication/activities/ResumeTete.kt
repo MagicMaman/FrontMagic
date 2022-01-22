@@ -9,6 +9,9 @@ import com.example.magicmamanapplication.MainViewModelFactory
 import com.example.magicmamanapplication.R
 import com.example.magicmamanapplication.repository.Repository
 import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.ItemTouchHelper
+import androidx.recyclerview.widget.RecyclerView
+import com.example.magicmamanapplication.SwipeGesture
 import com.example.magicmamanapplication.adapters.MyteteAdapter
 import kotlinx.android.synthetic.main.activity_resume_tete.*
 
@@ -46,7 +49,24 @@ class ResumeTete : AppCompatActivity() {
             }
         })
 
+        val swipegesture = object : SwipeGesture(this){
+            override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+
+                when(direction) {
+                    ItemTouchHelper.LEFT -> {
+                        myAdapter.deleteItem(viewHolder.adapterPosition)
+                    }
+                }
+
+            }
+        }
+        val touchHelper = ItemTouchHelper(swipegesture)
+        val recyclerviewTete= findViewById<RecyclerView>(R.id.recycleviewTete)
+        touchHelper.attachToRecyclerView(recyclerviewTete)
+
     }
+
+
 
     private fun setupRecyclerview() {
         recycleviewTete.adapter = myAdapter
@@ -54,5 +74,6 @@ class ResumeTete : AppCompatActivity() {
 
 
     }
+
 
 }

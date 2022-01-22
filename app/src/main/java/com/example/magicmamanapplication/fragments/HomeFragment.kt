@@ -67,7 +67,7 @@ class HomeFragment : Fragment(), HorizantalRcyclerViewMenuAdapter.OnItemClickLis
                     //permission denied
                     val permissions = arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE);
                     //show popup to request runtime permission
-                    requestPermissions(permissions, FavoriteFragment.PERMISSION_CODE);
+                    requestPermissions(permissions, HomeFragment.PERMISSION_CODE);
                 } else {
                     //permission already granted
                     pickImageFromGallery();

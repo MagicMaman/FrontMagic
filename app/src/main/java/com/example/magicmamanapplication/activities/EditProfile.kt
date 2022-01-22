@@ -15,7 +15,6 @@ import androidx.core.content.ContextCompat
 import com.example.magicmamanapplication.R
 import com.example.magicmamanapplication.Retrofit.MagicMamanApi
 import com.example.magicmamanapplication.Retrofit.Retrofit
-import com.example.magicmamanapplication.fragments.FavoriteFragment
 import com.google.gson.JsonObject
 import com.google.gson.JsonParser
 import kotlinx.android.synthetic.main.activity_edit_profile.*
@@ -79,7 +78,7 @@ class EditProfile : AppCompatActivity() {
                     //permission denied
                     val permissions = arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE);
                     //show popup to request runtime permission
-                    requestPermissions(permissions, FavoriteFragment.PERMISSION_CODE);
+                    requestPermissions(permissions, EditProfile.PERMISSION_CODE);
                 } else {
                     //permission already granted
                     pickImageFromGallery3();

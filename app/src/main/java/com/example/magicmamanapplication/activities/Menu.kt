@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.widget.FrameLayout
 import androidx.fragment.app.FragmentTransaction
 import com.example.magicmamanapplication.R
-import com.example.magicmamanapplication.fragments.FavoriteFragment
 import com.example.magicmamanapplication.fragments.HomeFragment
 import com.example.magicmamanapplication.fragments.ResumeFragment
 import com.example.magicmamanapplication.fragments.SettingsFragment
@@ -13,7 +12,6 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class Menu : AppCompatActivity(){
     //create our four fragments object
-    lateinit var favoriteFragment: FavoriteFragment
     lateinit var homeFragment: HomeFragment
     lateinit var settingsFragment: SettingsFragment
     lateinit var resumeFragment: ResumeFragment
@@ -46,15 +44,6 @@ class Menu : AppCompatActivity(){
                     supportFragmentManager
                         .beginTransaction()
                         .replace(R.id.frameLayout,homeFragment)
-                        .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
-                        .commit()
-                }
-                R.id.favorite ->
-                {
-                    favoriteFragment = FavoriteFragment()
-                    supportFragmentManager
-                        .beginTransaction()
-                        .replace(R.id.frameLayout,favoriteFragment)
                         .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
                         .commit()
                 }

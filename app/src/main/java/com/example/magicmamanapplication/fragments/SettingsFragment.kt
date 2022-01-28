@@ -30,7 +30,7 @@ class SettingsFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_settings, container, false)
         reminderCardView = view.findViewById(R.id.reminderCardView)
         profileCardView = view.findViewById(R.id.profileCardView)
-       // logoutCardView = view.findViewById(R.id.logoutCardView)
+        // logoutCardView = view.findViewById(R.id.logoutCardView)
         reminderCardView.setOnClickListener {
             val intent = Intent(requireContext(),MainActivity2::class.java)
             startActivity(intent)
@@ -45,15 +45,15 @@ class SettingsFragment : Fragment() {
         //
 
         // logoutCardView = view.findViewById(R.id.logoutCardView)
-    /*    paa.setOnClickListener {
-            val intent = Intent(requireContext(),MainActivity2::class.java)
-            startActivity(intent)
-        }*/
+        /*    paa.setOnClickListener {
+                val intent = Intent(requireContext(),MainActivity2::class.java)
+                startActivity(intent)
+            }*/
         paa = view.findViewById(R.id.logoutCardView)
         paa.setOnClickListener {
-          /*  val transaction = getActivity().getSupportFragmentManager().beginTransaction()
-                .replace(R.id.fragmentContainerView, LoginTabFragment()).commitNow()
-*/
+            /*  val transaction = getActivity().getSupportFragmentManager().beginTransaction()
+                  .replace(R.id.fragmentContainerView, LoginTabFragment()).commitNow()
+  */
 
             val intent = Intent(requireContext(),byeActivity::class.java)
             startActivity(intent)

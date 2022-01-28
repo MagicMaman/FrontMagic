@@ -94,11 +94,11 @@ class RepasSolide : AppCompatActivity() {
 
             saveNotesRepas=view.findViewById(R.id.saveNotesRepas)
             saveNotesRepas.text="$note"
-            b="$note"
+            c="$note"
 
             saveDishNameTv=view.findViewById(R.id.saveDishNameTv)
             saveDishNameTv.text="$namedish "
-            c="$namedish "
+            b="$namedish "
 
 
 

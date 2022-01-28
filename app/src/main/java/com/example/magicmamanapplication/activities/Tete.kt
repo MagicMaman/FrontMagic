@@ -26,6 +26,9 @@ class Tete : AppCompatActivity()
     private var time = 0.0
     lateinit var saveTimeTv : TextView
     lateinit var saveNotesTete : TextView
+    var a=""
+    var b=""
+
     override fun onCreate(savedInstanceState: Bundle?)
     {
         super.onCreate(savedInstanceState)
@@ -38,28 +41,23 @@ class Tete : AppCompatActivity()
             val btn_update_tete = view.findViewById<ImageView>(R.id.btn_update_tete)
             val btn_submit= view.findViewById<ImageView>(R.id.btn_confirm_tete)
 
-            btn_update_tete.setOnClickListener {
-                dialog.dismiss()
-            }
-            val time=binding.timeTV.text.toString()
-            val note=binding.edtNotes.text.toString()
+            val sharedPreferences = getSharedPreferences("sharedPrefs2", Context.MODE_PRIVATE)
+            val savedString=sharedPreferences.getString("STRING_KEY", null)
 
 
-            saveTimeTv=view.findViewById(R.id.saveTimeTv)
-            saveTimeTv.text="$time"//recuperation de données de activity
-
-            saveNotesTete=view.findViewById(R.id.saveNotesTete)
-            saveNotesTete.text="$note"
-
-            btn_submit.setOnClickListener {
+            btn_submit.setOnClickListener{
                 val repository = Repository()
                 val viewModelFactory = MainViewModelFactory(repository)
                 var viewModel = ViewModelProvider(this, viewModelFactory).get(MainViewModel::class.java)
                 // viewModel.getCustomPosts(5,"id", "desc")
-                viewModel.addtete("baby","$note","$time",)
+                viewModel.addtete(savedString.toString(),a,b)
                 // Toast.makeText(this,"good",Toast.LENGTH_SHORT).show()
                 //Log.e("jawekbehi",textv2.text.toString())
-                Toast.makeText(this,"goood",Toast.LENGTH_SHORT).show()
+                Toast.makeText(this,"check your resume", Toast.LENGTH_SHORT).show()
+            }
+
+            btn_update_tete.setOnClickListener {
+                dialog.dismiss()
             }
 
             close.setOnClickListener{
@@ -69,8 +67,28 @@ class Tete : AppCompatActivity()
             dialog.setContentView(view)
             dialog.show()
 
+            val time=binding.timeTV.text.toString()
+            val note=binding.edtNotes.text.toString()
 
 
+            saveTimeTv=view.findViewById(R.id.saveTimeTv)
+            saveTimeTv.text="$time"//recuperation de données de activity
+            a="$time"
+
+            saveNotesTete=view.findViewById(R.id.saveNotesTete)
+            saveNotesTete.text="$note"
+            b="$note"
+
+            /*btn_submit.setOnClickListener {
+                val repository = Repository()
+                val viewModelFactory = MainViewModelFactory(repository)
+                var viewModel = ViewModelProvider(this, viewModelFactory).get(MainViewModel::class.java)
+                // viewModel.getCustomPosts(5,"id", "desc")
+                viewModel.addtete("baby","$note","$time",)
+                // Toast.makeText(this,"good",Toast.LENGTH_SHORT).show()
+                //Log.e("jawekbehi",textv2.text.toString())
+                Toast.makeText(this,"goood",Toast.LENGTH_SHORT).show()
+            }*/
         }
         binding.startStopButton.setOnClickListener { startStopTimer() }
         binding.resetButton.setOnClickListener { resetTimer() }

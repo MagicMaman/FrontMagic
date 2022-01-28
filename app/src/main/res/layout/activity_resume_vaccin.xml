@@ -8,10 +8,28 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycleviewVaccin"
-        android:layout_width="391dp"
-        android:layout_height="754dp"
+        android:layout_width="393dp"
+        android:layout_height="682dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/textViewdisplaybabyv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:shadowColor="#FA0303"
+        android:text="TextView"
+        android:textColor="#13C107"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.462"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.04" />
 </androidx.constraintlayout.widget.ConstraintLayout>

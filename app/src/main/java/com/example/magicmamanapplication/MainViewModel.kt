@@ -102,5 +102,69 @@ class MainViewModel(private val repository: Repository): ViewModel() {
 
     }
 
+    fun addsolide(str: String,str2: String,str3: String,str4: String){
+        viewModelScope.launch {
+            val response= repository.addsolide(str,str2,str3,str4)
+            //myResponse4.value=response
+        }
+
+    }
+
+    fun addbibron(str: String,str2: String,str3: String,str4: String){
+        viewModelScope.launch {
+            val response= repository.addbibron(str,str2,str3,str4)
+            //myResponse4.value=response
+        }
+
+    }
+
+    fun addsommeil(str: String,str2: String,str3: String,str4: String){
+        viewModelScope.launch {
+            val response= repository.addsommeil(str,str2,str3,str4)
+            //myResponse4.value=response
+        }
+
+    }
+
+    fun addtaille(str: String,str2: String,str3: String,str4: String){
+        viewModelScope.launch {
+            val response= repository.addtaille(str,str2,str3,str4)
+            //myResponse4.value=response
+        }
+
+    }
+
+    fun addpoids(str: String,str2: String,str3: String,str4: String){
+        viewModelScope.launch {
+            val response= repository.addpoids(str,str2,str3,str4)
+            //myResponse4.value=response
+        }
+
+    }
+
+    fun addvaccin(str: String,str2: String,str3: String,str4: String){
+        viewModelScope.launch {
+            val response= repository.addvaccin(str,str2,str3,str4)
+            //myResponse4.value=response
+        }
+
+    }
+
+    fun addtemperature(str: String,str2: String,str3: String,str4: String){
+        viewModelScope.launch {
+            val response= repository.addtemperature(str,str2,str3,str4)
+            //myResponse4.value=response
+        }
+
+    }
+
+    fun addmedicament(str: String,str2: String,str3: String,str4: String,str5: String){
+        viewModelScope.launch {
+            val response= repository.addmedicament(str,str2,str3,str4,str5)
+            //myResponse4.value=response
+        }
+
+    }
+
 
 }

@@ -1,7 +1,9 @@
 package com.example.magicmamanapplication.activities
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.TextView
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.magicmamanapplication.MainViewModel
@@ -19,6 +21,7 @@ import kotlinx.android.synthetic.main.activity_resume_tete.*
 class ResumeTete : AppCompatActivity() {
 
     private lateinit var viewModel: MainViewModel
+    lateinit var tvprenombebe:TextView
 
 
     private val myAdapter by lazy { MyteteAdapter() }
@@ -28,6 +31,11 @@ class ResumeTete : AppCompatActivity() {
         setContentView(R.layout.activity_resume_tete)
         setupRecyclerview()
 
+        val sharedPreferences = getSharedPreferences("sharedPrefs2", Context.MODE_PRIVATE)
+        val savedString=sharedPreferences.getString("STRING_KEY", null)
+
+        tvprenombebe=findViewById(R.id.textViewshared)
+        tvprenombebe.text="Nom Bebe: "+savedString
 
         val repository = Repository()
         val viewModelFactory = MainViewModelFactory(repository)

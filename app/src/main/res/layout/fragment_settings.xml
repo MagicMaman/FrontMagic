@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_alignWithParentIfMissing="true"
-    tools:context=".fragments.SettingsFragment">
+    tools:context=".fragments.SettingsFragment"
+    android:id="@+id/fragmentContainerView">
 
 
     <com.google.android.material.imageview.ShapeableImageView
@@ -71,6 +72,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/logoutCardView"
             android:layout_width="170dp"
             android:layout_height="170dp"
             android:layout_rowWeight="1"
@@ -88,6 +90,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/contactusCardView"
             android:layout_width="170dp"
             android:layout_height="170dp"
             android:layout_rowWeight="1"

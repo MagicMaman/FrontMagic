@@ -1,7 +1,9 @@
 package com.example.magicmamanapplication.activities
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.TextView
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -20,10 +22,17 @@ class ResumeTemperature : AppCompatActivity() {
 
 
     private val myAdapter by lazy { MyTemperatureAdapter() }
+    lateinit var tvprenombebe: TextView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_resume_temperature)
         setupRecyclerview()
+
+        val sharedPreferences = getSharedPreferences("sharedPrefs2", Context.MODE_PRIVATE)
+        val savedString=sharedPreferences.getString("STRING_KEY", null)
+
+        tvprenombebe=findViewById(R.id.textViewdisplaybabyte)
+        tvprenombebe.text="Nom Bebe: "+savedString
 
 
         val repository = Repository()

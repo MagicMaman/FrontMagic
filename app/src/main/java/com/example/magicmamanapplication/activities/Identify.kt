@@ -3,99 +3,64 @@ package com.example.magicmamanapplication.activities
 import android.Manifest
 import android.annotation.SuppressLint
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.provider.Settings.Global.getString
 import android.util.Log
 import android.view.View
 import android.widget.*
 import androidx.core.content.ContextCompat
-import androidx.lifecycle.ViewModelProvider
-import com.example.magicmamanapplication.MainViewModel
-import com.example.magicmamanapplication.MainViewModelFactory
 import com.example.magicmamanapplication.R
-import com.example.magicmamanapplication.repository.Repository
+import com.example.magicmamanapplication.Retrofit.MagicMamanApi
+import com.example.magicmamanapplication.Retrofit.Retrofit
+import com.google.gson.JsonObject
+import com.google.gson.JsonParser
 import kotlinx.android.synthetic.main.activity_identify.*
 import kotlinx.android.synthetic.main.login_tab_fragment.*
 import kotlinx.android.synthetic.main.photo_layout.*
+import org.json.JSONObject
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class Identify : AppCompatActivity() {
-    lateinit var spin:Spinner
-    lateinit var prenom:EditText
-    lateinit var annif:EditText
-    //lateinit var radgarcon: RadioButton
-   // lateinit var radfille: RadioButton
     lateinit var btnSuivant: ImageView
-
-    //var gender=""
-    var text=""
-    var  gender =""
+    lateinit var radBtnG: RadioButton
+    lateinit var radBtnF: RadioButton
+    lateinit var gender: String
+    var pref=""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_identify)
-        spin=findViewById(R.id.spinnerLien)
-        prenom=findViewById(R.id.edtTxtPrenom)
-        annif=findViewById(R.id.edtTxtAnniv)
-        //radgarcon=findViewById(R.id.radBtnG)
-      //  radfille=findViewById(R.id.radBtnF)
-       // radfille=findViewById(R.id.radBtnF)
-       // radioGroup2=findViewById(R.id.radioGroup2)
+        radBtnG=findViewById(R.id.radBtnG)
+        radBtnF=findViewById(R.id.radBtnF)
         btnSuivant=findViewById(R.id.btnSuivant)
 
+        loadData()
+        btnSuivant.setOnClickListener {
+            saveData()
+        }
 
-      /*  radgarcon.isChecked=true
-        val i =radfille.isChecked
-        Log.e("i",i.toString())
 
-        val g = radgarcon.isChecked
-        Log.e("g",g.toString())
-        if(radfille.isChecked){
-
+        if(radBtnF.isChecked){
             gender  = "fille"
-            Log.e("gender","if fille")
         }
-        if(radgarcon.isChecked){
-            gender = "garcon"
-            Log.e("gender","if garson")
-
-        }*/
-        val switchGender = findViewById(R.id.switchGender) as Switch
-        switchGender.setOnCheckedChangeListener { buttonView, isChecked ->
-            if (isChecked) {
-                switchGender.text= getString(R.string.fille)
-                gender="fille"
-                Log.e("gender"," fille")
-
-            } else {
-                switchGender.text= getString(R.string.garçon)
-                gender="garçon"
-                Log.e("gender"," garçon")
-            }
+        else {
+            gender  = "garcon"
         }
-
-
+        val spinnerLien : Spinner = findViewById(R.id.spinnerLien)
         btnSuivant.setOnClickListener {
 
-             //val emaiil=intent.getStringExtra("email")
-            //Log.e("emailrec",emaiil.toString())
-            val repository = Repository()
-            val viewModelFactory = MainViewModelFactory(repository)
-            var viewModel = ViewModelProvider(this, viewModelFactory).get(MainViewModel::class.java)
-            // viewModel.getCustomPosts(5,"id", "desc")
-            viewModel.addbaby("rayen@esprit.tn",text,prenom.text.toString(),annif.text.toString(),"garcon")
-
-
-           val i= Intent(this,Menu::class.java)
-           startActivity(i)
-            //doStore(gender)
+            /*val i= Intent(this,Menu::class.java)
+            startActivity(i)*/
+            doStore(gender)
         }
 
         val lienNames = arrayOf("Mère","Père","Partenaire","Grand-parent","Oncle ou Tante","Ami(e)")
-
         val arrayAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, lienNames )
         // attached arrayadapter to spinner
         spinnerLien.adapter = arrayAdapter
@@ -105,14 +70,10 @@ class Identify : AppCompatActivity() {
             }
 
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                text = spinnerLien.getSelectedItem().toString()
-                Log.e("spiner",text)
 
             }
 
-         }
-
-         Log.d("spinner",text)
+        }
 
         imgHead.setOnClickListener {
             //check runtime permission
@@ -123,7 +84,7 @@ class Identify : AppCompatActivity() {
                     //permission denied
                     val permissions = arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE);
                     //show popup to request runtime permission
-                    requestPermissions(permissions, Identify.PERMISSION_CODE);
+                    // requestPermissions(permissions, FavoriteFragment.PERMISSION_CODE);
                 } else {
                     //permission already granted
                     pickImageFromGallery2();
@@ -135,6 +96,48 @@ class Identify : AppCompatActivity() {
         }
     }
 
+    private fun saveData(){
+        val insertedText = edtTxtPrenom.text.toString()
+
+        val sharedPreferences = getSharedPreferences("sharedPrefs2",Context.MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+        editor.apply {
+            putString("STRING_KEY", insertedText)
+            //putBoolean("BOOLEAN_KEY", sw_switch.isChecked)
+        }.apply()
+        if (!insertedText.isEmpty()){
+            Toast.makeText(this@Identify, "baby Added Sucessfull!", Toast.LENGTH_SHORT).show()
+            val i= Intent(this@Identify, Menu::class.java)
+            startActivity(i)
+        }
+
+        // txtPrenomBebe.text = insertedText
+
+
+
+
+
+        Log.e("houniiiiiiii",insertedText)
+        Log.d("houniiiiiiii",insertedText)
+
+        Toast.makeText(this,"Data Saved",Toast.LENGTH_SHORT).show()
+    }
+    private fun loadData(){
+
+        val sharedPreferences = getSharedPreferences("sharedPrefs2",Context.MODE_PRIVATE)
+        val savedString : String? = sharedPreferences.getString("STRING_KEY", null)
+        val savedBoolean : Boolean = sharedPreferences.getBoolean("BOOLEAN_KEY", false)
+
+        //txtPrenomBebe.text = savedString
+        if (savedString != null) {
+            if (!savedString.isEmpty()){
+                Toast.makeText(this@Identify, "baby Added Sucessfull!", Toast.LENGTH_SHORT).show()
+                val i= Intent(this@Identify, Menu::class.java)
+                startActivity(i)
+            }
+        }
+        // sw_switch.isChecked = savedBoolean
+    }
 
     private fun pickImageFromGallery2() {
         //Intent to pick image
@@ -181,7 +184,7 @@ class Identify : AppCompatActivity() {
         }
     }
 
-   /* private fun doStore(gender: String) {
+    private fun doStore(gender: String) {
         val paramObject1 = JSONObject()
         //paramObject1.put("email", edtTxtEmail.text.toString().trim())//1)eli 3andi fl user2)part rapport eli 3andi fl txt fl application
         paramObject1.put("name", edtTxtPrenom.text.toString().trim())
@@ -196,9 +199,10 @@ class Identify : AppCompatActivity() {
                     val baby = response.body()?.get("name").toString()
                     val babyname=baby.substring(1,baby.length-1)
                     Log.e("Erooooorr",babyname)
-                    Toast.makeText(this@Identify, "baby Added Sucessfull!", Toast.LENGTH_SHORT).show()
-                    val i= Intent(this@Identify, Menu::class.java)
-                    startActivity(i)
+                    saveData()
+                    /*  Toast.makeText(this@Identify, "baby Added Sucessfull!", Toast.LENGTH_SHORT).show()
+                      val i= Intent(this@Identify, Menu::class.java)
+                      startActivity(i)*/
                 }
             }
 
@@ -209,6 +213,4 @@ class Identify : AppCompatActivity() {
         })
 
     }
-
-    */
 }

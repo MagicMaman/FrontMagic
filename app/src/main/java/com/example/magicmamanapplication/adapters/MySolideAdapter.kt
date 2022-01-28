@@ -27,7 +27,7 @@ class MySolideAdapter: RecyclerView.Adapter<MySolideAdapter.MyViewHolder>(){
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
 
         holder.itemView.ResumeTimeDish.text=myList[position].time
-        holder.itemView.ResumeDishName.text=myList[position].Name
+        holder.itemView.ResumeDishName.text=myList[position].name
         holder.itemView.ResumeNotesSolide.text=myList[position].notes
 
 

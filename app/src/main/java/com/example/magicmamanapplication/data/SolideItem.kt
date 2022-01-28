@@ -1,7 +1,7 @@
 package com.example.magicmamanapplication.data
 
 data class SolideItem(
-    val Name: String,
+    val name: String,
     val __v: Int,
     val baby: String,
     val _id: String,

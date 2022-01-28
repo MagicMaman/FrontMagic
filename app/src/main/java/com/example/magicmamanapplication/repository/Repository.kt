@@ -53,4 +53,51 @@ class Repository {
 
 
     }
+
+    suspend fun addsolide(str: String,str2: String,str3: String,str4: String) {
+        return RetrofitInstance.api.ajoutSolide(str,str2,str3,str4)
+
+
+    }
+    suspend fun addbibron(str: String,str2: String,str3: String,str4: String) {
+        return RetrofitInstance.api.ajoutBibron(str,str2,str3,str4)
+
+
+    }
+
+    suspend fun addsommeil(str: String,str2: String,str3: String,str4: String) {
+        return RetrofitInstance.api.ajoutSommeil(str,str2,str3,str4)
+
+
+    }
+
+    suspend fun addtaille(str: String,str2: String,str3: String,str4: String) {
+        return RetrofitInstance.api.ajoutTaille(str,str2,str3,str4)
+
+
+    }
+
+    suspend fun addpoids(str: String,str2: String,str3: String,str4: String) {
+        return RetrofitInstance.api.ajoutPoids(str,str2,str3,str4)
+
+
+    }
+
+    suspend fun addvaccin(str: String,str2: String,str3: String,str4: String) {
+        return RetrofitInstance.api.ajoutVaccin(str,str2,str3,str4)
+
+
+    }
+
+    suspend fun addtemperature(str: String,str2: String,str3: String,str4: String) {
+        return RetrofitInstance.api.ajoutTemperature(str,str2,str3,str4)
+
+
+    }
+
+    suspend fun addmedicament(str: String,str2: String,str3: String,str4: String,str5: String) {
+        return RetrofitInstance.api.ajoutMedicament(str,str2,str3,str4,str5)
+
+
+    }
 }

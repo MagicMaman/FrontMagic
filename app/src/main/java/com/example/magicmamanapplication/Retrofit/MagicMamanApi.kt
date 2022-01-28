@@ -103,4 +103,84 @@ interface MagicMamanApi {
 
 
 
+    //http://localhost:3000/solide/storee/malek/13/azert/124
+    //router.get('/storee/:babyy/:timee/:namee/:notess',solideController.storee)
+    @GET("/solide/storee/{babyy}/{timee}/{namee}/{notess}")
+    suspend fun ajoutSolide(
+        @Path("babyy") babyy:String,
+        @Path("timee") timee:String,
+        @Path("namee") namee:String,
+        @Path("notess") notess:String
+    )
+
+    //http://localhost:3000/solide/storee/malek/13/azert/124
+    //router.get('/storee/:babyy/:timee/:quantityy/:notess',bibronController.storee)
+    @GET("/bibron/storee/{babyy}/{timee}/{quantityy}/{notess}")
+    suspend fun ajoutBibron(
+        @Path("babyy") babyy:String,
+        @Path("timee") timee:String,
+        @Path("quantityy") quantityy:String,
+        @Path("notess") notess:String
+    )
+
+    //http://localhost:3000/solide/storee/malek/13/azert/124
+    //router.get('/storee/:babyy/:timesleepp/:timeawakee/:notess',endormissementController.storee)
+    @GET("/endormissement/storee/{babyy}/{timesleepp}/{timeawakee}/{notess}")
+    suspend fun ajoutSommeil(
+        @Path("babyy") babyy:String,
+        @Path("timesleepp") timesleepp:String,
+        @Path("timeawakee") timeawakee:String,
+        @Path("notess") notess:String
+    )
+
+    //http://localhost:3000/solide/storee/malek/13/azert/124
+    //router.get('/storee/:babyy/:timee/:taillee/:notess',tailleController.store)
+    @GET("/taille/storee/{babyy}/{timee}/{taillee}/{notess}")
+    suspend fun ajoutTaille(
+        @Path("babyy") babyy:String,
+        @Path("timee") timee:String,
+        @Path("taillee") taillee:String,
+        @Path("notess") notess:String
+    )
+
+    //http://localhost:3000/solide/storee/malek/13/azert/124
+    //router.get('/storee/:babyy/:timee/:poidss/:notess',poidsController.storee)
+    @GET("/poids/storee/{babyy}/{timee}/{poidss}/{notess}")
+    suspend fun ajoutPoids(
+        @Path("babyy") babyy:String,
+        @Path("timee") timee:String,
+        @Path("poidss") poidss:String,
+        @Path("notess") notess:String
+    )
+
+    //http://localhost:3000/solide/storee/malek/13/azert/124
+    //router.get('/storee/:babyy/:timee/:namee/:notess',vaccinController.storee)
+    @GET("/vaccin/storee/{babyy}/{timee}/{namee}/{notess}")
+    suspend fun ajoutVaccin(
+        @Path("babyy") babyy:String,
+        @Path("timee") timee:String,
+        @Path("namee") namee:String,
+        @Path("notess") notess:String
+    )
+
+    //http://localhost:3000/solide/storee/malek/13/azert/124
+    //router.get('/storee/:babyy/:timee/:temperaturee/:notess',temperatureController.storee)
+    @GET("/temperature/storee/{babyy}/{timee}/{temperaturee}/{notess}")
+    suspend fun ajoutTemperature(
+        @Path("babyy") babyy:String,
+        @Path("timee") timee:String,
+        @Path("temperaturee") temperaturee:String,
+        @Path("notess") notess:String
+    )
+
+    //http://localhost:3000/solide/storee/malek/13/azert/124
+    //router.get('/storee/:babyy/:timee/:namee/:quantityy/:notee',medicamentController.storee)
+    @GET("/medicament/storee/{babyy}/{timee}/{namee}/{quantityy}/{notess}")
+    suspend fun ajoutMedicament(
+        @Path("babyy") babyy:String,
+        @Path("timee") timee:String,
+        @Path("namee") temperaturee:String,
+        @Path("quantityy") quantityy:String,
+        @Path("notess") notess:String
+    )
 }

@@ -20,10 +20,12 @@
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MagicMamanApplication/MagicMamanApplication/app/src/main/res/layout/activity_hospital.xml" value="0.15043859649122807" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MagicMamanApplication/MagicMamanApplication/app/src/main/res/layout/activity_identify.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MagicMamanApplication/MagicMamanApplication/app/src/main/res/layout/activity_main.xml" value="0.18854166666666666" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MagicMamanApplication/MagicMamanApplication/app/src/main/res/layout/activity_main2.xml" value="0.22" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MagicMamanApplication/MagicMamanApplication/app/src/main/res/layout/activity_medicaments.xml" value="0.12092391304347826" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MagicMamanApplication/MagicMamanApplication/app/src/main/res/layout/activity_menu.xml" value="0.2" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MagicMamanApplication/MagicMamanApplication/app/src/main/res/layout/activity_poids.xml" value="0.12092391304347826" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MagicMamanApplication/MagicMamanApplication/app/src/main/res/layout/activity_register.xml" value="0.18854166666666666" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MagicMamanApplication/MagicMamanApplication/app/src/main/res/layout/activity_reminder.xml" value="0.11535087719298245" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MagicMamanApplication/MagicMamanApplication/app/src/main/res/layout/activity_repas_solide.xml" value="0.12092391304347826" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MagicMamanApplication/MagicMamanApplication/app/src/main/res/layout/activity_resume_taille.xml" value="0.2" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MagicMamanApplication/MagicMamanApplication/app/src/main/res/layout/activity_sommeil.xml" value="0.1206140350877193" />
@@ -62,6 +64,7 @@
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MagicMamanApplication/MagicMamanApplication/app/src/main/res/layout/taille_toast.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MagicMamanApplication/MagicMamanApplication/app/src/main/res/layout/temperature_toast.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MagicMamanApplication/MagicMamanApplication/app/src/main/res/layout/tete_toast.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MagicMamanApplication/MagicMamanApplication/app/src/main/res/layout/vaccin_item_layout.xml" value="0.11535087719298245" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MagicMamanApplication/MagicMamanApplication/app/src/main/res/layout/vaccin_toast.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MagicMamanApplication/MagicMamanApplication/app/src/main/res/menu/bottom_menu.xml" value="0.18854166666666666" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MagicMamanApplication/app/src/main/res/drawable-hdpi/ic_pause_black_24dp.xml" value="0.14895833333333333" />

@@ -24,7 +24,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/tw_cen_bold"
             android:layout_marginTop="2dp"
-            android:text="Date"
+            android:text="Time"
             android:textColor="@color/green2"
             android:textSize="12dp"
             app:layout_constraintEnd_toEndOf="parent"

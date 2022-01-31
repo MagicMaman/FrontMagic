@@ -130,8 +130,8 @@ class Identify : AppCompatActivity() {
             })
             return false
         }
-        /*
-        if(!setBirthdayEditText())
+
+       /* if(setBirthdayEditText())
         {
             Toast.makeText(this, "incorrect date format!", Toast.LENGTH_SHORT).show()
             return false
@@ -140,7 +140,7 @@ class Identify : AppCompatActivity() {
         return true
 
     }
-   /* private fun setBirthdayEditText(): Boolean {
+   /*private fun setBirthdayEditText(): Boolean {
 
         edtTxtAnniv.addTextChangedListener(object : TextWatcher {
 

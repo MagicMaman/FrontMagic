@@ -29,6 +29,14 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import java.util.*
+import android.app.DatePickerDialog
+import android.app.DatePickerDialog.OnDateSetListener
+
+import android.widget.DatePicker
+
+import android.widget.EditText
+import java.text.SimpleDateFormat
+
 
 class Identify : AppCompatActivity() {
 
@@ -95,6 +103,36 @@ class Identify : AppCompatActivity() {
                 pickImageFromGallery2();
             }
         }
+
+
+        val myCalendar = Calendar.getInstance()
+
+        val edittext = findViewById<View>(R.id.edtTxtAnniv) as EditText
+        val date =
+            OnDateSetListener { view, year, monthOfYear, dayOfMonth -> // TODO Auto-generated method stub
+                myCalendar[Calendar.YEAR] = year
+                myCalendar[Calendar.MONTH] = monthOfYear
+                myCalendar[Calendar.DAY_OF_MONTH] = dayOfMonth
+                updateLabel()
+            }
+
+        edittext.setOnClickListener(object : View.OnClickListener {
+            override fun onClick(v: View?) {
+                // TODO Auto-generated method stub
+                DatePickerDialog(this@Identify, date, myCalendar[Calendar.YEAR], myCalendar[Calendar.MONTH],
+                    myCalendar[Calendar.DAY_OF_MONTH]
+                ).show()
+            }
+        })
+    }
+
+    private fun updateLabel() {
+        val myCalendar = Calendar.getInstance()
+
+
+        val myFormat = "MM/dd/yy" //In which you need put here
+        val sdf = SimpleDateFormat(myFormat, Locale.US)
+        edtTxtAnniv.setText(sdf.format(myCalendar.getTime()))
     }
 
     private fun clickNext() {

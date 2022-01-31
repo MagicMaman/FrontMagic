@@ -107,11 +107,13 @@ class SignUpTabFragment : Fragment() {
             })
             return false
         }
-        if (edtTxtPassword?.text!!.isEmpty()) {
-            (toast3.apply {
+       // if (!edtTxtPassword?.text!!.equals(edtTxtConfirmPass.text) ) {
+        if (!edtTxtPassword.getText().toString().equals(edtTxtConfirmPass.getText().toString())) {
+                //return true
+            (toast5.apply {
                 duration = Toast.LENGTH_SHORT
                 //setGravity(Gravity.BOTTOM,0,0)
-                view = layout3
+                view = layout5
                 show()
             })
             return false
@@ -125,7 +127,7 @@ class SignUpTabFragment : Fragment() {
             })
             return false
         }
-        if (edtTxtPassword.length()==4 ) {
+        if (edtTxtPassword?.text!!.length!=4 ) {
             (toast6.apply {
                 duration = Toast.LENGTH_SHORT
                 //setGravity(Gravity.BOTTOM,0,0)

@@ -1,15 +1,23 @@
 package com.example.magicmamanapplication.adapters
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
+import com.example.magicmamanapplication.MainViewModel
+import com.example.magicmamanapplication.MainViewModelFactory
 import com.example.magicmamanapplication.R
 import com.example.magicmamanapplication.data.SolideItem
 import com.example.magicmamanapplication.data.teteItem
+import com.example.magicmamanapplication.repository.Repository
 import kotlinx.android.synthetic.main.new_item_layout.view.*
 
 class MyteteAdapter : RecyclerView.Adapter<MyteteAdapter.MyViewHolder>(){
+    private lateinit var viewModel: MainViewModel
+    var a=""
 
     private var myList = emptyList<teteItem>()
 
@@ -40,10 +48,19 @@ class MyteteAdapter : RecyclerView.Adapter<MyteteAdapter.MyViewHolder>(){
 
     }
 
-    fun deleteItem( i : Int){
+    fun  deleteItem( i : Int){
         myList.drop(i)
-        //myList.removeAt(i)
+       // Toast.makeText(this,"item id: ",Toast.LENGTH_SHORT).show()
+        Log.d("aaaaa",i.toString())
+        Log.d("elnotehedhi",myList[i].notes)
+            //a==myList[i].notes
+        //return a
+
+
+
         notifyDataSetChanged()
     }
+
+
 
 }

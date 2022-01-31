@@ -97,6 +97,7 @@
             android:backgroundTint="@color/green"
             android:inputType="date"
             android:minHeight="48dp"
+            android:hint="jj/mm/aaaa"
             android:paddingLeft="20dp"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"

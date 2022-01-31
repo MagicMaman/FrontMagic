@@ -1,8 +1,10 @@
 package com.example.magicmamanapplication.activities
 
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
@@ -16,6 +18,9 @@ import com.example.magicmamanapplication.fragments.TimePickerFragment
 import com.example.magicmamanapplication.repository.Repository
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
+import kotlinx.android.synthetic.main.activity_added_soon.*
+import kotlinx.android.synthetic.main.activity_repas_solide.*
+import kotlinx.android.synthetic.main.activity_vaccin.*
 
 class Vaccin : AppCompatActivity() {
     private lateinit var binding: ActivityVaccinBinding
@@ -31,70 +36,91 @@ class Vaccin : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding= ActivityVaccinBinding.inflate(layoutInflater)
+        binding = ActivityVaccinBinding.inflate(layoutInflater)
         setContentView(binding.root)
         //setContentView(R.layout.activity_vaccin)
 
-        etTimeVaccin=findViewById(R.id.etTimeVaccin)
-        etTimeVaccin.setOnClickListener{ showTimePickerDialog()}
+        etTimeVaccin = findViewById(R.id.etTimeVaccin)
+        etTimeVaccin.setOnClickListener { showTimePickerDialog() }
 
         binding.btnNextVaccin.setOnClickListener {
-            val dialog = BottomSheetDialog(this, R.style.BottomSheetDialogTheme)
-            val offsetFromTop = 200
-            (dialog as? BottomSheetDialog)?.behavior?.apply {
-                isFitToContents = false
-                expandedOffset = offsetFromTop
-                state = BottomSheetBehavior.STATE_EXPANDED
+
+            if (!etTimeVaccin.text.isEmpty() && !etVaccin.text.isEmpty() && !edt_notes_vaccin.text.isEmpty()) {
+                val dialog = BottomSheetDialog(this, R.style.BottomSheetDialogTheme)
+                val offsetFromTop = 200
+                (dialog as? BottomSheetDialog)?.behavior?.apply {
+                    isFitToContents = false
+                    expandedOffset = offsetFromTop
+                    state = BottomSheetBehavior.STATE_EXPANDED
+                }
+                val view = layoutInflater.inflate(R.layout.fragment_btn_sheet_vaccin, null)
+                val close7 = view.findViewById<ImageView>(R.id.close7)
+                val btn_update_vaccin = view.findViewById<ImageView>(R.id.btn_update_vaccin)
+                val btn_submit = view.findViewById<ImageView>(R.id.btn_confirm_vaccin)
+
+                val sharedPreferences = getSharedPreferences("sharedPrefs2", Context.MODE_PRIVATE)
+                val savedString = sharedPreferences.getString("STRING_KEY", null)
+
+
+                btn_submit.setOnClickListener {
+                    val repository = Repository()
+                    val viewModelFactory = MainViewModelFactory(repository)
+                    var viewModel =
+                        ViewModelProvider(this, viewModelFactory).get(MainViewModel::class.java)
+                    // viewModel.getCustomPosts(5,"id", "desc")
+                    viewModel.addvaccin(savedString.toString(), a, b, c)
+                    // Toast.makeText(this,"good",Toast.LENGTH_SHORT).show()
+                    //Log.e("jawekbehi",textv2.text.toString())
+                    Toast.makeText(this, "check your resume", Toast.LENGTH_SHORT).show()
+                    val i= Intent(this, Menu::class.java)
+                    startActivity(i)
+                }
+                btn_update_vaccin.setOnClickListener {
+                    dialog.dismiss()
+                }
+
+
+                close7.setOnClickListener {
+                    dialog.dismiss()
+                }
+
+                dialog.setCancelable(false)
+                dialog.setContentView(view)
+                dialog.show()
+
+                val time = binding.etTimeVaccin.text.toString()
+                val note = binding.edtNotesVaccin.text.toString()
+                val vaccin = binding.etVaccin.text.toString()
+
+                saveTimeTv7 = view.findViewById(R.id.saveTimeTv7)
+                saveTimeTv7.text = "$time"//recuperation de données de activity
+                a = "$time"
+
+                saveNotesVaccin = view.findViewById(R.id.saveNotesVaccin)
+                saveNotesVaccin.text = "$note"
+                c = "$note"
+
+                saveVaccinNameTv = view.findViewById(R.id.saveVaccinNameTv)
+                saveVaccinNameTv.text = "$vaccin"
+                b = "$vaccin "
             }
-            val view = layoutInflater.inflate(R.layout.fragment_btn_sheet_vaccin,null)
-            val close7 = view.findViewById<ImageView>(R.id.close7)
-            val btn_update_vaccin = view.findViewById<ImageView>(R.id.btn_update_vaccin)
-            val btn_submit= view.findViewById<ImageView>(R.id.btn_confirm_vaccin)
+            else
+            {
 
-            val sharedPreferences = getSharedPreferences("sharedPrefs2", Context.MODE_PRIVATE)
-            val savedString=sharedPreferences.getString("STRING_KEY", null)
+                //Toast.makeText(applicationContext,"Notes is Empty", Toast.LENGTH_SHORT).show()
 
+                val layout1 : View = layoutInflater.inflate(R.layout.vaccin_toast, ll_wrapper)
+                val toast: Toast = Toast(applicationContext)
 
-            btn_submit.setOnClickListener{
-                val repository = Repository()
-                val viewModelFactory = MainViewModelFactory(repository)
-                var viewModel = ViewModelProvider(this, viewModelFactory).get(MainViewModel::class.java)
-                // viewModel.getCustomPosts(5,"id", "desc")
-                viewModel.addvaccin(savedString.toString(),a,b,c)
-                // Toast.makeText(this,"good",Toast.LENGTH_SHORT).show()
-                //Log.e("jawekbehi",textv2.text.toString())
-                Toast.makeText(this,"check your resume", Toast.LENGTH_SHORT).show()
-            }
-            btn_update_vaccin.setOnClickListener {
-                dialog.dismiss()
+                (toast.apply {
+                    duration = Toast.LENGTH_SHORT
+                    //setGravity(Gravity.BOTTOM,0,0)
+                    view = layout1
+                    show()
+                })
             }
 
-
-            close7.setOnClickListener{
-                dialog.dismiss()
-            }
-
-            dialog.setCancelable(false)
-            dialog.setContentView(view)
-            dialog.show()
-
-            val time=binding.etTimeVaccin.text.toString()
-            val note=binding.edtNotesVaccin.text.toString()
-            val vaccin =binding.etVaccin.text.toString()
-
-            saveTimeTv7=view.findViewById(R.id.saveTimeTv7)
-            saveTimeTv7.text="$time"//recuperation de données de activity
-            a="$time"
-
-            saveNotesVaccin=view.findViewById(R.id.saveNotesVaccin)
-            saveNotesVaccin.text="$note"
-            c="$note"
-
-            saveVaccinNameTv=view.findViewById(R.id.saveVaccinNameTv)
-            saveVaccinNameTv.text="$vaccin"
-            b="$vaccin "
         }
-
     }
 
     private fun showTimePickerDialog() {

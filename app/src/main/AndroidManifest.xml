@@ -16,6 +16,9 @@
         android:theme="@style/Theme.MagicMamanApplication"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".AddedSoon"
+            android:exported="false" />
+        <activity
             android:name=".activities.byeActivity"
             android:exported="false" />
         <activity

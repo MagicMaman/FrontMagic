@@ -166,5 +166,13 @@ class MainViewModel(private val repository: Repository): ViewModel() {
 
     }
 
+    fun supp(str: String){
+        viewModelScope.launch {
+            val response= repository.supp(str)
+            //myResponse4.value=response
+        }
+
+    }
+
 
 }

@@ -183,4 +183,10 @@ interface MagicMamanApi {
         @Path("quantityy") quantityy:String,
         @Path("notess") notess:String
     )
+
+    //router.get('/destory/:teteID', teteController.destory )
+    @GET("/tete/destory/{teteID}")
+    suspend fun supp(
+        @Path("teteID") teteID:String
+    )
 }

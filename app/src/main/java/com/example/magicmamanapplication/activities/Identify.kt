@@ -9,6 +9,8 @@ import android.content.pm.PackageManager
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
 import android.view.View
 import android.widget.*
@@ -19,14 +21,17 @@ import com.example.magicmamanapplication.Retrofit.Retrofit
 import com.google.gson.JsonObject
 import com.google.gson.JsonParser
 import kotlinx.android.synthetic.main.activity_identify.*
+import kotlinx.android.synthetic.main.custom_toast.*
 import kotlinx.android.synthetic.main.login_tab_fragment.*
 import kotlinx.android.synthetic.main.photo_layout.*
 import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.util.*
 
 class Identify : AppCompatActivity() {
+
     lateinit var btnSuivant: ImageView
     lateinit var radBtnG: RadioButton
     lateinit var radBtnF: RadioButton
@@ -36,13 +41,16 @@ class Identify : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_identify)
+
         radBtnG=findViewById(R.id.radBtnG)
         radBtnF=findViewById(R.id.radBtnF)
         btnSuivant=findViewById(R.id.btnSuivant)
 
         loadData()
         btnSuivant.setOnClickListener {
-            saveData()
+            clickNext()
+           /*val i= Intent(this,Menu::class.java)
+            startActivity(i)*/
         }
 
 
@@ -53,13 +61,6 @@ class Identify : AppCompatActivity() {
             gender  = "garcon"
         }
         val spinnerLien : Spinner = findViewById(R.id.spinnerLien)
-        btnSuivant.setOnClickListener {
-
-            /*val i= Intent(this,Menu::class.java)
-            startActivity(i)*/
-            doStore(gender)
-        }
-
         val lienNames = arrayOf("Mère","Père","Partenaire","Grand-parent","Oncle ou Tante","Ami(e)")
         val arrayAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, lienNames )
         // attached arrayadapter to spinner
@@ -96,6 +97,110 @@ class Identify : AppCompatActivity() {
         }
     }
 
+    private fun clickNext() {
+        if (validate()) {
+            saveData()
+            doStore(gender)
+
+        }
+    }
+
+    private fun validate(): Boolean {
+        val layout :View = layoutInflater.inflate(R.layout.custom_toast, ll_wrapper)
+        val layout1 :View = layoutInflater.inflate(R.layout.anniv_toast, ll_wrapper)
+        val toast: Toast = Toast(applicationContext)
+        val toast1: Toast = Toast(applicationContext)
+
+        if (edtTxtPrenom?.text!!.isEmpty()) {
+            (toast.apply {
+                duration = Toast.LENGTH_SHORT
+                //setGravity(Gravity.BOTTOM,0,0)
+                view = layout
+                show()
+            })
+            return false
+        }
+
+        if (edtTxtAnniv?.text!!.isEmpty()) {
+            (toast1.apply {
+                duration = Toast.LENGTH_SHORT
+                //setGravity(Gravity.BOTTOM,0,0)
+                view = layout1
+                show()
+            })
+            return false
+        }
+        /*
+        if(!setBirthdayEditText())
+        {
+            Toast.makeText(this, "incorrect date format!", Toast.LENGTH_SHORT).show()
+            return false
+        }*/
+
+        return true
+
+    }
+   /* private fun setBirthdayEditText(): Boolean {
+
+        edtTxtAnniv.addTextChangedListener(object : TextWatcher {
+
+            private var current = ""
+            private val ddmmyyyy = "DDMMYYYY"
+            private val cal = Calendar.getInstance()
+
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                if (p0.toString() != current) {
+                    var clean = p0.toString().replace("[^\\d.]|\\.".toRegex(), "")
+                    val cleanC = current.replace("[^\\d.]|\\.", "")
+
+                    val cl = clean.length
+                    var sel = cl
+                    var i = 2
+                    while (i <= cl && i < 6) {
+                        sel++
+                        i += 2
+                    }
+                    //Fix for pressing delete next to a forward slash
+                    if (clean == cleanC) sel--
+
+                    if (clean.length < 8) {
+                        clean = clean + ddmmyyyy.substring(clean.length)
+                    } else {
+                        //This part makes sure that when we finish entering numbers
+                        //the date is correct, fixing it otherwise
+                        var day = Integer.parseInt(clean.substring(0, 2))
+                        var mon = Integer.parseInt(clean.substring(2, 4))
+                        var year = Integer.parseInt(clean.substring(4, 8))
+
+                        mon = if (mon < 1) 1 else if (mon > 12) 12 else mon
+                        cal.set(Calendar.MONTH, mon - 1)
+                        year = if (year < 1900) 1900 else if (year > 2100) 2100 else year
+                        cal.set(Calendar.YEAR, year)
+                        // ^ first set year for the line below to work correctly
+                        //with leap years - otherwise, date e.g. 29/02/2012
+                        //would be automatically corrected to 28/02/2012
+
+                        day = if (day > cal.getActualMaximum(Calendar.DATE)) cal.getActualMaximum(Calendar.DATE) else day
+                        clean = String.format("%02d%02d%02d", day, mon, year)
+                    }
+
+                    clean = String.format("%s/%s/%s", clean.substring(0, 2),
+                        clean.substring(2, 4),
+                        clean.substring(4, 8))
+
+                    sel = if (sel < 0) 0 else sel
+                    current = clean
+                    edtTxtAnniv.setText(current)
+                    edtTxtAnniv.setSelection(if (sel < current.count()) sel else current.count())
+                }
+            }
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+            override fun afterTextChanged(p0: Editable) {
+            }
+        })
+        return true
+    }*/
     private fun saveData(){
         val insertedText = edtTxtPrenom.text.toString()
 
@@ -106,17 +211,12 @@ class Identify : AppCompatActivity() {
             //putBoolean("BOOLEAN_KEY", sw_switch.isChecked)
         }.apply()
         if (!insertedText.isEmpty()){
-            Toast.makeText(this@Identify, "baby Added Sucessfull!", Toast.LENGTH_SHORT).show()
+            //Toast.makeText(this@Identify, "baby Added Sucessfull!", Toast.LENGTH_SHORT).show()
             val i= Intent(this@Identify, Menu::class.java)
             startActivity(i)
         }
 
         // txtPrenomBebe.text = insertedText
-
-
-
-
-
         Log.e("houniiiiiiii",insertedText)
         Log.d("houniiiiiiii",insertedText)
 

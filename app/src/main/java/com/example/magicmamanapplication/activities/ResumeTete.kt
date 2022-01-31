@@ -3,6 +3,7 @@ package com.example.magicmamanapplication.activities
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.TextView
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -15,6 +16,7 @@ import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.example.magicmamanapplication.SwipeGesture
 import com.example.magicmamanapplication.adapters.MyteteAdapter
+import com.example.magicmamanapplication.data.teteItem
 import kotlinx.android.synthetic.main.activity_resume_tete.*
 
 
@@ -22,6 +24,8 @@ class ResumeTete : AppCompatActivity() {
 
     private lateinit var viewModel: MainViewModel
     lateinit var tvprenombebe:TextView
+    var aaa=""
+    private var myList = emptyList<teteItem>()
 
 
     private val myAdapter by lazy { MyteteAdapter() }
@@ -63,6 +67,9 @@ class ResumeTete : AppCompatActivity() {
                 when(direction) {
                     ItemTouchHelper.LEFT -> {
                         myAdapter.deleteItem(viewHolder.adapterPosition)
+
+                       // viewModel.supp(myList[viewHolder.adapterPosition].notes)
+
                     }
                 }
 

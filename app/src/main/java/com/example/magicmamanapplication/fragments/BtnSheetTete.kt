@@ -20,6 +20,7 @@ import com.example.magicmamanapplication.activities.Identify
 import com.example.magicmamanapplication.repository.Repository
 import com.google.gson.JsonObject
 import com.google.gson.JsonParser
+import kotlinx.android.synthetic.main.activity_added_soon.*
 import kotlinx.android.synthetic.main.fragment_btn_sheet_tete.*
 import kotlinx.android.synthetic.main.login_tab_fragment.*
 import kotlinx.android.synthetic.main.signup_tab_fragment.*
@@ -41,7 +42,7 @@ lateinit var confirmer:Button
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view= inflater.inflate(R.layout.fragment_btn_sheet_tete, container, false)
+        var view= inflater.inflate(R.layout.fragment_btn_sheet_tete, container, false)
         textv1=view.findViewById(R.id.saveTimeTv)
         textv2=view.findViewById(R.id.saveNotesTete)
         confirmer=view.findViewById(R.id.btn_confirm_tete)
@@ -51,8 +52,11 @@ lateinit var confirmer:Button
             var viewModel = ViewModelProvider(this, viewModelFactory).get(MainViewModel::class.java)
             // viewModel.getCustomPosts(5,"id", "desc")
             viewModel.addtete("baby",textv1.text.toString(),textv2.text.toString())
-                // Toast.makeText(this,"good",Toast.LENGTH_SHORT).show()
+              //   Toast.makeText(this,"good",Toast.LENGTH_SHORT).show()
             //Log.e("jawekbehi",textv2.text.toString())
+          //  Log.d("message","enty lhne")
+
+
         }
         //Ajout
 

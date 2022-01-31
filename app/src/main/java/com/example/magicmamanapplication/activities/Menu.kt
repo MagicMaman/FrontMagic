@@ -2,13 +2,19 @@ package com.example.magicmamanapplication.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.view.View
 import android.widget.FrameLayout
+import android.widget.Toast
+import androidx.cardview.widget.CardView
 import androidx.fragment.app.FragmentTransaction
 import com.example.magicmamanapplication.R
 import com.example.magicmamanapplication.fragments.HomeFragment
 import com.example.magicmamanapplication.fragments.ResumeFragment
 import com.example.magicmamanapplication.fragments.SettingsFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import kotlinx.android.synthetic.main.custom_toast.*
+import kotlinx.android.synthetic.main.fragment_settings.*
 
 class Menu : AppCompatActivity(){
     //create our four fragments object
@@ -70,6 +76,10 @@ class Menu : AppCompatActivity(){
             true
 
         }
+
+
+
+
 
 
     }

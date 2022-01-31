@@ -100,4 +100,10 @@ class Repository {
 
 
     }
+
+    suspend fun supp(str: String) {
+        return RetrofitInstance.api.supp(str)
+
+
+    }
 }

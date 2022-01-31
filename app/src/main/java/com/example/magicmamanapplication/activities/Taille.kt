@@ -4,10 +4,12 @@ import android.annotation.SuppressLint
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
 import android.content.Context
+import android.content.Intent
 import android.icu.util.Calendar
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.*
 import androidx.annotation.RequiresApi
 import androidx.lifecycle.ViewModelProvider
@@ -20,6 +22,10 @@ import com.example.magicmamanapplication.fragments.TimePickerFragment
 import com.example.magicmamanapplication.repository.Repository
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
+import kotlinx.android.synthetic.main.activity_added_soon.*
+import kotlinx.android.synthetic.main.activity_repas_solide.*
+import kotlinx.android.synthetic.main.activity_repas_solide.edt_solid
+import kotlinx.android.synthetic.main.activity_taille.*
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -53,73 +59,97 @@ class Taille : AppCompatActivity(), DatePickerDialog.OnDateSetListener, TimePick
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding= ActivityTailleBinding.inflate(layoutInflater)
+        binding = ActivityTailleBinding.inflate(layoutInflater)
         setContentView(binding.root)
         //setContentView(R.layout.activity_taille)
 
 
-        etTimeTaille=findViewById(R.id.etTimeTaille)
-       // etTimeTaille.setOnClickListener{ showTimePickerDialog()}
+        etTimeTaille = findViewById(R.id.etTimeTaille)
+        // etTimeTaille.setOnClickListener{ showTimePickerDialog()}
 
         binding.btnNextTaille.setOnClickListener {
-            val dialog = BottomSheetDialog(this, R.style.BottomSheetDialogTheme)
-            val offsetFromTop = 200
-            (dialog as? BottomSheetDialog)?.behavior?.apply {
-                isFitToContents = false
-                expandedOffset = offsetFromTop
-                state = BottomSheetBehavior.STATE_EXPANDED
+
+            if (!etTimeTaille.text.isEmpty() && !edt_taille.text.isEmpty() && !edt_notes_taille.text.isEmpty()) {
+                val dialog = BottomSheetDialog(this, R.style.BottomSheetDialogTheme)
+                val offsetFromTop = 200
+                (dialog as? BottomSheetDialog)?.behavior?.apply {
+                    isFitToContents = false
+                    expandedOffset = offsetFromTop
+                    state = BottomSheetBehavior.STATE_EXPANDED
+                }
+                val view = layoutInflater.inflate(R.layout.fragment_btn_sheet_taille, null)
+                val close5 = view.findViewById<ImageView>(R.id.close5)
+                val btn_update_taille = view.findViewById<ImageView>(R.id.btn_update_taille)
+                val btn_submit = view.findViewById<ImageView>(R.id.btn_confirm_taille)
+
+                val sharedPreferences = getSharedPreferences("sharedPrefs2", Context.MODE_PRIVATE)
+                val savedString = sharedPreferences.getString("STRING_KEY", null)
+
+
+                btn_submit.setOnClickListener {
+                    val repository = Repository()
+                    val viewModelFactory = MainViewModelFactory(repository)
+                    var viewModel =
+                        ViewModelProvider(this, viewModelFactory).get(MainViewModel::class.java)
+                    // viewModel.getCustomPosts(5,"id", "desc")
+                    viewModel.addtaille(savedString.toString(), a, b, c)
+                    // Toast.makeText(this,"good",Toast.LENGTH_SHORT).show()
+                    //Log.e("jawekbehi",textv2.text.toString())
+
+                    Toast.makeText(this, "check your resume", Toast.LENGTH_SHORT).show()
+                    val i= Intent(this, Menu::class.java)
+                    startActivity(i)
+                }
+
+
+                btn_update_taille.setOnClickListener {
+                    dialog.dismiss()
+                }
+
+                close5.setOnClickListener {
+                    dialog.dismiss()
+                }
+                dialog.setCancelable(false)
+                dialog.setContentView(view)
+                dialog.show()
+
+                val time = binding.etTimeTaille.text.toString()
+                val note = binding.edtNotesTaille.text.toString()
+                val height = binding.edtTaille.text.toString()
+
+                saveTimeTv5 = view.findViewById(R.id.saveTimeTv5)
+                saveTimeTv5.text = "$time"//recuperation de données de activity
+                a = "$time"
+
+                saveHeightNameTv = view.findViewById(R.id.saveHeightNameTv)
+                saveHeightNameTv.text = "$height "
+                b = "$height"
+
+                saveNotesTaille = view.findViewById(R.id.saveNotesTaille)
+                saveNotesTaille.text = "$note"
+                c = "$note "
+
+
             }
-            val view = layoutInflater.inflate(R.layout.fragment_btn_sheet_taille,null)
-            val close5 = view.findViewById<ImageView>(R.id.close5)
-            val btn_update_taille = view.findViewById<ImageView>(R.id.btn_update_taille)
-            val btn_submit= view.findViewById<ImageView>(R.id.btn_confirm_taille)
 
-            val sharedPreferences = getSharedPreferences("sharedPrefs2", Context.MODE_PRIVATE)
-            val savedString=sharedPreferences.getString("STRING_KEY", null)
+            else
+            {
 
+                //Toast.makeText(applicationContext,"Notes is Empty", Toast.LENGTH_SHORT).show()
 
-            btn_submit.setOnClickListener{
-                val repository = Repository()
-                val viewModelFactory = MainViewModelFactory(repository)
-                var viewModel = ViewModelProvider(this, viewModelFactory).get(MainViewModel::class.java)
-                // viewModel.getCustomPosts(5,"id", "desc")
-                viewModel.addtaille(savedString.toString(),a,b,c)
-                // Toast.makeText(this,"good",Toast.LENGTH_SHORT).show()
-                //Log.e("jawekbehi",textv2.text.toString())
-                Toast.makeText(this,"check your resume", Toast.LENGTH_SHORT).show()
+                val layout1 : View = layoutInflater.inflate(R.layout.taille_toast, ll_wrapper)
+                val toast: Toast = Toast(applicationContext)
+
+                (toast.apply {
+                    duration = Toast.LENGTH_SHORT
+                    //setGravity(Gravity.BOTTOM,0,0)
+                    view = layout1
+                    show()
+                })
             }
-
-
-            btn_update_taille.setOnClickListener {
-                dialog.dismiss()
-            }
-
-            close5.setOnClickListener{
-                dialog.dismiss()
-            }
-            dialog.setCancelable(false)
-            dialog.setContentView(view)
-            dialog.show()
-
-            val time=binding.etTimeTaille.text.toString()
-            val note=binding.edtNotesTaille.text.toString()
-            val height =binding.edtTaille.text.toString()
-
-            saveTimeTv5=view.findViewById(R.id.saveTimeTv5)
-            saveTimeTv5.text="$time"//recuperation de données de activity
-            a="$time"
-
-            saveHeightNameTv=view.findViewById(R.id.saveHeightNameTv)
-            saveHeightNameTv.text="$height "
-            b="$height"
-
-            saveNotesTaille=view.findViewById(R.id.saveNotesTaille)
-            saveNotesTaille.text="$note"
-            c="$note "
-
+            pickDate()
 
         }
-        pickDate()
     }
     private fun getDateTimeCalendar(){
 

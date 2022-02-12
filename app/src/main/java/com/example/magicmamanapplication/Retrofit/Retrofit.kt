@@ -6,8 +6,7 @@ import retrofit2.Retrofit
 
 
 class Retrofit {
-    var BASE_URL = "https://magicmaman.herokuapp.com/"
-    //var BASE_URL = "http://192.168.1.25:3000/"
+    var BASE_URL = "https://magicmaman.herokuapp.com/" // Localhost will be changed to 10.0.2.2 in Emulator
 
     fun getRetroClinetInstance() : Retrofit{
 

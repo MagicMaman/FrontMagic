@@ -5,7 +5,6 @@ import android.content.Intent
 import android.content.IntentFilter
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
@@ -15,11 +14,8 @@ import com.example.magicmamanapplication.MainViewModelFactory
 import com.example.magicmamanapplication.R
 import com.example.magicmamanapplication.databinding.ActivityTeteBinding
 import com.example.magicmamanapplication.fragments.BtnSheetTete
-import com.example.magicmamanapplication.fragments.ResumeFragment
 import com.example.magicmamanapplication.repository.Repository
 import com.google.android.material.bottomsheet.BottomSheetDialog
-import kotlinx.android.synthetic.main.activity_added_soon.*
-import kotlinx.android.synthetic.main.activity_tete.*
 import kotlin.math.roundToInt
 
 class Tete : AppCompatActivity()
@@ -30,96 +26,50 @@ class Tete : AppCompatActivity()
     private var time = 0.0
     lateinit var saveTimeTv : TextView
     lateinit var saveNotesTete : TextView
-    var a=""
-    var b=""
-
     override fun onCreate(savedInstanceState: Bundle?)
     {
         super.onCreate(savedInstanceState)
         binding = ActivityTeteBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.btnNextTete.setOnClickListener {
+            val dialog = BottomSheetDialog(this, R.style.BottomSheetDialogTheme)
+            val view = layoutInflater.inflate(R.layout.fragment_btn_sheet_tete, null)
+            val close = view.findViewById<ImageView>(R.id.close)
+            val btn_update_tete = view.findViewById<ImageView>(R.id.btn_update_tete)
+            val btn_submit= view.findViewById<ImageView>(R.id.btn_confirm_tete)
 
-
-
-
-            if(!edtNotes.text.isEmpty()){
-
-                val dialog = BottomSheetDialog(this, R.style.BottomSheetDialogTheme)
-                var view = layoutInflater.inflate(R.layout.fragment_btn_sheet_tete, null)
-                val close = view.findViewById<ImageView>(R.id.close)
-                val btn_update_tete = view.findViewById<ImageView>(R.id.btn_update_tete)
-                val btn_submit= view.findViewById<ImageView>(R.id.btn_confirm_tete)
-
-                val sharedPreferences = getSharedPreferences("sharedPrefs2", Context.MODE_PRIVATE)
-                val savedString=sharedPreferences.getString("STRING_KEY", null)
-
-
-                btn_submit.setOnClickListener{
-                    val repository = Repository()
-                    val viewModelFactory = MainViewModelFactory(repository)
-                    var viewModel = ViewModelProvider(this, viewModelFactory).get(MainViewModel::class.java)
-                    // viewModel.getCustomPosts(5,"id", "desc")
-                    viewModel.addtete(savedString.toString(),a,b)
-                    // Toast.makeText(this,"good",Toast.LENGTH_SHORT).show()
-                    //Log.e("jawekbehi",textv2.text.toString())
-
-                    Toast.makeText(this,"check your resume", Toast.LENGTH_SHORT).show()
-                    val i= Intent(this, Menu::class.java)
-                    startActivity(i)
-                }
-
-                btn_update_tete.setOnClickListener {
-                    dialog.dismiss()
-                }
-
-                close.setOnClickListener{
-                    dialog.dismiss()
-                }
-                dialog.setCancelable(false)
-                dialog.setContentView(view)
-                dialog.show()
-
-                val time=binding.timeTV.text.toString()
-                val note=binding.edtNotes.text.toString()
-
-
-                saveTimeTv=view.findViewById(R.id.saveTimeTv)
-                saveTimeTv.text="$time"//recuperation de données de activity
-                a="$time"
-
-                saveNotesTete=view.findViewById(R.id.saveNotesTete)
-                saveNotesTete.text="$note"
-                b="$note"
-
-                /*btn_submit.setOnClickListener {
-                    val repository = Repository()
-                    val viewModelFactory = MainViewModelFactory(repository)
-                    var viewModel = ViewModelProvider(this, viewModelFactory).get(MainViewModel::class.java)
-                    // viewModel.getCustomPosts(5,"id", "desc")
-                    viewModel.addtete("baby","$note","$time",)
-                    // Toast.makeText(this,"good",Toast.LENGTH_SHORT).show()
-                    //Log.e("jawekbehi",textv2.text.toString())
-                    Toast.makeText(this,"goood",Toast.LENGTH_SHORT).show()
-                }*/
-
-
+            btn_update_tete.setOnClickListener {
+                dialog.dismiss()
             }
-            else
-            {
+            val time=binding.timeTV.text.toString()
+            val note=binding.edtNotes.text.toString()
 
-                //Toast.makeText(applicationContext,"Notes is Empty", Toast.LENGTH_SHORT).show()
 
-                val layout1 : View = layoutInflater.inflate(R.layout.tete_toast, ll_wrapper)
-                val toast: Toast = Toast(applicationContext)
+            saveTimeTv=view.findViewById(R.id.saveTimeTv)
+            saveTimeTv.text="$time"//recuperation de données de activity
 
-                (toast.apply {
-                    duration = Toast.LENGTH_SHORT
-                    //setGravity(Gravity.BOTTOM,0,0)
-                    view = layout1
-                    show()
-                })
+            saveNotesTete=view.findViewById(R.id.saveNotesTete)
+            saveNotesTete.text="$note"
+
+            btn_submit.setOnClickListener {
+                val repository = Repository()
+                val viewModelFactory = MainViewModelFactory(repository)
+                var viewModel = ViewModelProvider(this, viewModelFactory).get(MainViewModel::class.java)
+                // viewModel.getCustomPosts(5,"id", "desc")
+                viewModel.addtete("baby","$note","$time",)
+                // Toast.makeText(this,"good",Toast.LENGTH_SHORT).show()
+                //Log.e("jawekbehi",textv2.text.toString())
+                Toast.makeText(this,"goood",Toast.LENGTH_SHORT).show()
             }
+
+            close.setOnClickListener{
+                dialog.dismiss()
+            }
+            dialog.setCancelable(false)
+            dialog.setContentView(view)
+            dialog.show()
+
+
 
         }
         binding.startStopButton.setOnClickListener { startStopTimer() }

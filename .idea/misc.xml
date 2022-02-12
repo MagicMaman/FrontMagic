@@ -39,11 +39,8 @@
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MagicMamanApplication/MagicMamanApplication/app/src/main/res/layout/anniv_toast.xml" value="0.16394927536231885" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MagicMamanApplication/MagicMamanApplication/app/src/main/res/layout/bibrons_toast.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MagicMamanApplication/MagicMamanApplication/app/src/main/res/layout/check_toast.xml" value="0.16666666666666666" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MagicMamanApplication/MagicMamanApplication/app/src/main/res/layout/confirmpass_toast.xml" value="0.14692982456140352" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MagicMamanApplication/MagicMamanApplication/app/src/main/res/layout/contactus_toast.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MagicMamanApplication/MagicMamanApplication/app/src/main/res/layout/custom_toast.xml" value="0.33" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MagicMamanApplication/MagicMamanApplication/app/src/main/res/layout/diff_toast.xml" value="0.14692982456140352" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MagicMamanApplication/MagicMamanApplication/app/src/main/res/layout/email_toast.xml" value="0.17192982456140352" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MagicMamanApplication/MagicMamanApplication/app/src/main/res/layout/etat.xml" value="0.18854166666666666" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MagicMamanApplication/MagicMamanApplication/app/src/main/res/layout/fragment_btn_sheet_tete.xml" value="0.2786885245901639" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MagicMamanApplication/MagicMamanApplication/app/src/main/res/layout/fragment_btn_sheet_vaccin.xml" value="0.16666666666666666" />
@@ -57,14 +54,10 @@
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MagicMamanApplication/MagicMamanApplication/app/src/main/res/layout/layout_child.xml" value="0.1" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MagicMamanApplication/MagicMamanApplication/app/src/main/res/layout/layout_group.xml" value="0.1" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MagicMamanApplication/MagicMamanApplication/app/src/main/res/layout/login_tab_fragment.xml" value="0.17300724637681159" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MagicMamanApplication/MagicMamanApplication/app/src/main/res/layout/maxlength_toast.xml" value="0.14692982456140352" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MagicMamanApplication/MagicMamanApplication/app/src/main/res/layout/medicaments_toast.xml" value="0.16666666666666666" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MagicMamanApplication/MagicMamanApplication/app/src/main/res/layout/name_toast.xml" value="0.14692982456140352" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MagicMamanApplication/MagicMamanApplication/app/src/main/res/layout/password_toast.xml" value="0.17192982456140352" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MagicMamanApplication/MagicMamanApplication/app/src/main/res/layout/photo_layout.xml" value="0.22" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MagicMamanApplication/MagicMamanApplication/app/src/main/res/layout/poids_toast.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MagicMamanApplication/MagicMamanApplication/app/src/main/res/layout/repassolide_toast.xml" value="0.16666666666666666" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MagicMamanApplication/MagicMamanApplication/app/src/main/res/layout/signup_tab_fragment.xml" value="0.2" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MagicMamanApplication/MagicMamanApplication/app/src/main/res/layout/sommeil_toast.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MagicMamanApplication/MagicMamanApplication/app/src/main/res/layout/sub_item_list.xml" value="0.25" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MagicMamanApplication/MagicMamanApplication/app/src/main/res/layout/taille_item_layout.xml" value="0.42074074074074075" />
@@ -73,7 +66,6 @@
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MagicMamanApplication/MagicMamanApplication/app/src/main/res/layout/tete_toast.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MagicMamanApplication/MagicMamanApplication/app/src/main/res/layout/vaccin_item_layout.xml" value="0.11535087719298245" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MagicMamanApplication/MagicMamanApplication/app/src/main/res/layout/vaccin_toast.xml" value="0.16666666666666666" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MagicMamanApplication/MagicMamanApplication/app/src/main/res/layout/validatemail_toast.xml" value="0.17192982456140352" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MagicMamanApplication/MagicMamanApplication/app/src/main/res/menu/bottom_menu.xml" value="0.18854166666666666" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MagicMamanApplication/app/src/main/res/drawable-hdpi/ic_pause_black_24dp.xml" value="0.14895833333333333" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MagicMamanApplication/app/src/main/res/drawable-hdpi/ic_shuffle_black_24dp.xml" value="0.16770833333333332" />
@@ -179,6 +171,8 @@
         <entry key="..\:/Users/DELL/Desktop/miniprojet/FrontMagicMaman/app/src/main/res/layout/login_tab_fragment.xml" value="0.1" />
         <entry key="..\:/Users/DELL/Desktop/miniprojet/FrontMagicMaman/app/src/main/res/layout/solide_item_layout.xml" value="0.21403508771929824" />
         <entry key="..\:/Users/DELL/Desktop/miniprojet/FrontMagicMaman/app/src/main/res/layout/taille_item_layout.xml" value="0.20087719298245615" />
+        <entry key="..\:/Users/DELL/Desktop/miniprojet/FrontMagicMaman/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.22763157894736843" />
+        <entry key="..\:/Users/DELL/Desktop/miniprojet/FrontMagicMaman/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.22763157894736843" />
         <entry key="..\:/Users/chaima/AndroidStudioProjects/MagicMamanApplication/app/src/main/res/drawable/edt_txt_dg.xml" value="0.18333333333333332" />
         <entry key="..\:/Users/chaima/AndroidStudioProjects/MagicMamanApplication/app/src/main/res/drawable/null_radio_button.xml" value="0.12129629629629629" />
         <entry key="..\:/Users/chaima/AndroidStudioProjects/MagicMamanApplication/app/src/main/res/drawable/radio_not_selected.xml" value="0.12129629629629629" />

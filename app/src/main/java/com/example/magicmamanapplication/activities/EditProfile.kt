@@ -150,7 +150,7 @@ class EditProfile : AppCompatActivity() {
                 if(response.code()==200) {
                     val baby = response.body()?.get("name").toString()
                     val babyname=baby.substring(1,baby.length-1)
-                    Log.e("Erooooorr",babyname)
+                    Log.d("Erooooorr",babyname)
                     Toast.makeText(this@EditProfile, "baby updated Sucessfull!", Toast.LENGTH_SHORT).show()
                     val i= Intent(this@EditProfile, Menu::class.java)
                     startActivity(i)
@@ -158,7 +158,7 @@ class EditProfile : AppCompatActivity() {
             }
 
             override fun onFailure(call: Call<JsonObject>, t: Throwable) {
-                Log.e("Error", t.message.toString())
+                Log.d("Error", t.message.toString())
                 Toast.makeText(this@EditProfile, "an error Occured!", Toast.LENGTH_SHORT).show()
             }
         })

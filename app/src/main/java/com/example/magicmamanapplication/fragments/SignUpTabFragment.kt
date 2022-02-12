@@ -174,7 +174,7 @@ class SignUpTabFragment : Fragment() {
             }
 
             override fun onFailure(call: Call<JsonObject>, t: Throwable) {
-                Log.e("Error", t.message.toString())
+                Log.d("Error", t.message.toString())
                 Toast.makeText(context, "Sign Up failure", Toast.LENGTH_SHORT).show()
             }
         })

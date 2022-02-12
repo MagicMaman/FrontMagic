@@ -76,6 +76,7 @@ class SettingsFragment : Fragment() {
             startActivity(intent)
 
 
+
         }
 
 

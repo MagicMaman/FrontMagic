@@ -74,7 +74,7 @@ class Medicaments : AppCompatActivity() {
                     // viewModel.getCustomPosts(5,"id", "desc")
                     viewModel.addmedicament(savedString.toString(), a, b, c, d)
                     // Toast.makeText(this,"good",Toast.LENGTH_SHORT).show()
-                    //Log.e("jawekbehi",textv2.text.toString())
+                    //Log.d("jawekbehi",textv2.text.toString())
                     Toast.makeText(this, "check your resume", Toast.LENGTH_SHORT).show()
                     val i= Intent(this, Menu::class.java)
                     startActivity(i)

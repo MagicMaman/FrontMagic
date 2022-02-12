@@ -255,7 +255,7 @@ class Identify : AppCompatActivity() {
         }
 
         // txtPrenomBebe.text = insertedText
-        Log.e("houniiiiiiii",insertedText)
+        Log.d("houniiiiiiii",insertedText)
         Log.d("houniiiiiiii",insertedText)
 
         Toast.makeText(this,"Data Saved",Toast.LENGTH_SHORT).show()
@@ -336,7 +336,7 @@ class Identify : AppCompatActivity() {
                 if(response.code()==200) {
                     val baby = response.body()?.get("name").toString()
                     val babyname=baby.substring(1,baby.length-1)
-                    Log.e("Erooooorr",babyname)
+                    Log.d("Erooooorr",babyname)
                     saveData()
                     /*  Toast.makeText(this@Identify, "baby Added Sucessfull!", Toast.LENGTH_SHORT).show()
                       val i= Intent(this@Identify, Menu::class.java)
@@ -345,7 +345,7 @@ class Identify : AppCompatActivity() {
             }
 
             override fun onFailure(call: Call<JsonObject>, t: Throwable) {
-                Log.e("Error", t.message.toString())
+                Log.d("Error", t.message.toString())
                 Toast.makeText(this@Identify, "an error Occured!", Toast.LENGTH_SHORT).show()
             }
         })

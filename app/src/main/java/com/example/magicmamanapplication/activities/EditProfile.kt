@@ -18,7 +18,6 @@ import com.example.magicmamanapplication.Retrofit.Retrofit
 import com.google.gson.JsonObject
 import com.google.gson.JsonParser
 import kotlinx.android.synthetic.main.activity_edit_profile.*
-import kotlinx.android.synthetic.main.activity_identify.*
 import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Callback

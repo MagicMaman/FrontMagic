@@ -1,5 +1,6 @@
 package com.example.magicmamanapplication.activities
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -25,6 +26,21 @@ class SplashScreen : AppCompatActivity() {
 
         Handler().postDelayed({
             startActivity(homeIntent)
+
+            val sharedPreferences = getSharedPreferences("shared", Context.MODE_PRIVATE)
+            val editor = sharedPreferences.edit()
+            editor.apply {
+                putString("shared", null)
+                putBoolean("IS_REMEMBRED", false)
+            }.apply()
+
+            val sharedPreferences2 = getSharedPreferences("sharedPrefs2", Context.MODE_PRIVATE)
+            val editor2 = sharedPreferences2?.edit()
+            editor2?.apply {
+                putString("STRING_KEY", null)
+                //putBoolean("BOOLEAN_KEY", sw_switch.isChecked)
+            }?.apply()
+
             finish()
         }, splashScreenTimeOut.toLong() )
     }

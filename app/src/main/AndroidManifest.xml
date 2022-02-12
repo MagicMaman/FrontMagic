@@ -117,9 +117,6 @@
             android:name=".activities.Menu"
             android:exported="false" />
         <activity
-            android:name=".activities.Identify"
-            android:exported="true" />
-        <activity
             android:name=".activities.Register"
             android:exported="true" />
         <activity

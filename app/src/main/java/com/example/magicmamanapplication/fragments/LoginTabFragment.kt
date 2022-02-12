@@ -4,21 +4,22 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
+import android.util.Patterns
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
+import android.view.Menu
 import android.view.View
 import android.view.ViewGroup
 import android.widget.CheckBox
-import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.magicmamanapplication.activities.Identify
 import com.example.magicmamanapplication.R
 import com.example.magicmamanapplication.databinding.LoginTabFragmentBinding
 import com.example.magicmamanapplication.Retrofit.MagicMamanApi
 import com.example.magicmamanapplication.Retrofit.Retrofit
 import com.google.gson.JsonObject
 import com.google.gson.JsonParser
+import kotlinx.android.synthetic.main.activity_added_soon.*
 import kotlinx.android.synthetic.main.login_tab_fragment.*
 import org.json.JSONObject
 import retrofit2.Call
@@ -51,7 +52,7 @@ class LoginTabFragment : Fragment() {
 
 
         if(mSharedPref.getBoolean(IS_REMEMBRED, true)){
-            val intent= Intent(this@LoginTabFragment.requireContext(), Identify::class.java)
+            val intent= Intent(this@LoginTabFragment.requireContext(), com.example.magicmamanapplication.activities.Menu::class.java)
             startActivity(intent)
            // Log.e("yamalek",edtTxtEmail.text.toString())
 
@@ -65,9 +66,57 @@ class LoginTabFragment : Fragment() {
                 mSharedPref.edit().putBoolean(IS_REMEMBRED, false).apply()
             }
                 doLogin()
+                clickNext()
         }
         return bind.root
     }
+
+    private fun clickNext() {
+        if (validate()) {
+            doLogin()
+
+        }
+    }
+
+    private fun validate(): Boolean {
+        val layout :View = layoutInflater.inflate(R.layout.email_toast, ll_wrapper)
+        val layout1 :View = layoutInflater.inflate(R.layout.password_toast, ll_wrapper)
+        val layout2 :View = layoutInflater.inflate(R.layout.validatemail_toast, ll_wrapper)
+        val toast: Toast = Toast(requireContext())
+        val toast1: Toast = Toast(requireContext())
+        val toast2: Toast = Toast(requireContext())
+
+        if (edtTxtEmail?.text!!.isEmpty()) {
+            (toast.apply {
+                duration = Toast.LENGTH_SHORT
+                //setGravity(Gravity.BOTTOM,0,0)
+                view = layout
+                show()
+            })
+            return false
+        }
+        if (!Patterns.EMAIL_ADDRESS.matcher(edtTxtEmail?.text!!).matches()) {
+            (toast2.apply {
+                duration = Toast.LENGTH_SHORT
+                //setGravity(Gravity.BOTTOM,0,0)
+                view = layout2
+                show()
+            })
+            return false
+        }
+        if (edtTxtPassword?.text!!.isEmpty()) {
+            (toast1.apply {
+                duration = Toast.LENGTH_SHORT
+                //setGravity(Gravity.BOTTOM,0,0)
+                view = layout1
+                show()
+            })
+            return false
+        }
+
+        return true
+    }
+
 
     private fun doLogin() {
         val paramObject1 = JSONObject()
@@ -90,7 +139,7 @@ class LoginTabFragment : Fragment() {
                 Log.e("Erooooorr",username)
                 Toast.makeText(context, "Login Success", Toast.LENGTH_SHORT).show()
 
-                val intent = Intent(this@LoginTabFragment.requireContext(), Identify::class.java)
+                val intent = Intent(this@LoginTabFragment.requireContext(), com.example.magicmamanapplication.activities.Menu::class.java)
                 mSharedPref.edit().apply {
                     putString(EMAIL, email.substring(1, email.length -1))
                     putString(ID, id.substring(1, id.length -1))
